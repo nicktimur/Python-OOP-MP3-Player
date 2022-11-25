@@ -1,9 +1,7 @@
 # Gereken eklentiler için komutlar:
 
-- [x] pip install os-sys
 - [x] pip install PyQt5
 - [x] pip install pygame
-- [x] pip install tk
 
 
 - <b>Hatırladıklarım bunlar başka fark edersek ekleriz.</b>
