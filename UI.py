@@ -182,6 +182,81 @@ class Ui_Frame(object):
 "    }")
         self.Shuffle.setCheckable(True)
         self.Shuffle.setObjectName("Shuffle")
+        self.SoundSlider = QtWidgets.QSlider(self.frame)
+        self.SoundSlider.setGeometry(QtCore.QRect(1000, 60, 160, 22))
+        self.SoundSlider.setStyleSheet("QSlider::groove:horizontal {\n"
+"border: 1px solid #bbb;\n"
+"background: white;\n"
+"height: 10px;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::sub-page:horizontal {\n"
+"background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,\n"
+"    stop: 0 #005f00, stop: 1 #66ff00);\n"
+"\n"
+"border: 1px solid #777;\n"
+"height: 10px;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::add-page:horizontal {\n"
+"background: #fff;\n"
+"border: 1px solid #777;\n"
+"height: 10px;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal {\n"
+"background-color: rgb(11, 144, 27);\n"
+"border: 1px solid #777;\n"
+"width: 13px;\n"
+"margin-top: -2px;\n"
+"margin-bottom: -2px;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal:hover {\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"    stop:0 #fff, stop:1 #ddd);\n"
+"border: 1px solid #444;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::sub-page:horizontal:disabled {\n"
+"background: #bbb;\n"
+"border-color: #999;\n"
+"}\n"
+"\n"
+"QSlider::add-page:horizontal:disabled {\n"
+"background: #eee;\n"
+"border-color: #999;\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal:disabled {\n"
+"background: #eee;\n"
+"border: 1px solid #aaa;\n"
+"border-radius: 4px;\n"
+"}")
+        self.SoundSlider.setMaximum(100)
+        self.SoundSlider.setProperty("value", 100)
+        self.SoundSlider.setSliderPosition(100)
+        self.SoundSlider.setOrientation(QtCore.Qt.Horizontal)
+        self.SoundSlider.setObjectName("SoundSlider")
+        self.label = QtWidgets.QLabel(self.frame)
+        self.label.setGeometry(QtCore.QRect(1050, 40, 71, 16))
+        self.label.setStyleSheet("QLabel {\n"
+"    color: #333;\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 20px;\n"
+"    border-style: outset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
+"        );\n"
+"    }\n"
+"")
+        self.label.setObjectName("label")
         self.songs_list = QtWidgets.QTableWidget(Frame)
         self.songs_list.setGeometry(QtCore.QRect(200, 0, 781, 571))
         self.songs_list.setMinimumSize(QtCore.QSize(781, 0))
@@ -215,6 +290,7 @@ class Ui_Frame(object):
         self.nextButton.setText(_translate("Frame", ">>|"))
         self.backButton.setText(_translate("Frame", "|<<"))
         self.Shuffle.setText(_translate("Frame", "Shuffle"))
+        self.label.setText(_translate("Frame", "<html><head/><body><p align=\"center\">Ses Seviyesi</p></body></html>"))
         item = self.songs_list.horizontalHeaderItem(0)
         item.setText(_translate("Frame", "Şarkı İsmi"))
         self.find_path.setText(_translate("Frame", "Şarkıları Ekle"))

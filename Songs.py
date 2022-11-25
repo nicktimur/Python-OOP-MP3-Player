@@ -2,7 +2,6 @@ import os
 from tkinter import filedialog
 import tkinter as tk
 from UI import *
-from PyQt5 import *
 from PyQt5.QtWidgets import *
 import pygame
 import random
@@ -17,7 +16,7 @@ class Songs:
         self.shuffled_list = []
         self.shuffleRow = 0
         self.playingRow = 0
-        self.status = ""
+        self.playing = False
         self.ui = ui
         self.path = ""
         self.SONG_END = pygame.USEREVENT
@@ -36,6 +35,12 @@ class Songs:
     @songs.deleter
     def songs(self):
         self.songList.clear()
+
+    def setVolume(self):
+        new_volume = self.ui.SoundSlider.value() #0-100 arası bir değer alıyor
+        new_volume = new_volume / 100
+        print(new_volume)
+        pygame.mixer.music.set_volume(new_volume) # 0-1 arası float değerler istiyor
 
     def AddtoTable(self, songsList):
         self.ui.songs_list.setRowCount(len(songsList))
@@ -63,7 +68,7 @@ class Songs:
         pygame.mixer.music.load(self.songs[self.playingRow])
         pygame.mixer.music.set_endevent(self.SONG_END)
         pygame.mixer.music.play()
-        self.status = "Playing"
+        self.playing = True
         self.ui.nowPlaying.setText("Çalan Şarkı: {}".format(self.songs[self.playingRow]))
 
 
@@ -86,7 +91,7 @@ class Songs:
                 self.ui.songs_list.selectRow(self.playingRow)
             pygame.mixer.music.set_endevent(self.SONG_END)
             pygame.mixer.music.play()
-            self.status = "Playing"
+            self.playing = True
         except:
             pass
 
@@ -107,22 +112,22 @@ class Songs:
                 self.ui.songs_list.selectRow(self.playingRow)
             pygame.mixer.music.set_endevent(self.SONG_END)
             pygame.mixer.music.play()
-            self.status = "Playing"
+            self.playing = True
         except:
             pass
 
     def PauseMusic(self):
         pygame.mixer.music.pause()
-        self.status = "Paused"
+        self.playing = False
 
     def UnpauseMusic(self):
         pygame.mixer.music.unpause()
-        self.status = "Unpaused"
+        self.playing = False
 
     def StopMusic(self):
         try:
             pygame.mixer.music.stop()
-            self.status = ""
+            self.playing = False
         except:
             pass
 
@@ -137,4 +142,4 @@ class Songs:
         for event in pygame.event.get():
             if event.type == self.SONG_END:
                 self.PlayNext()
-
+            
