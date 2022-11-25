@@ -1,4 +1,5 @@
 import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 from tkinter import filedialog
 from UI import *
 from PyQt5.QtWidgets import *
@@ -18,7 +19,7 @@ class Songs:
         self.playing = False
         self.ui = ui
         self.path = ""
-        self.SONG_END = pygame.USEREVENT
+        self.SONG_END = pygame.USEREVENT+1
         
     @property
     def songs(self):
@@ -88,8 +89,8 @@ class Songs:
 
     def PlayMusic(self):
         self.playingRow = self.ui.songs_list.currentRow()
-        pygame.mixer.music.load(self.songs[self.playingRow])
         pygame.mixer.music.set_endevent(self.SONG_END)
+        pygame.mixer.music.load(self.songs[self.playingRow])
         pygame.mixer.music.play()
         self.playing = True
         self.ui.nowPlaying.setText("Çalan Şarkı: {}".format(self.songs[self.playingRow]))
@@ -99,7 +100,7 @@ class Songs:
         try:
             if(self.playingRow+2 > len(self.songs)):
                 return 0
-            self.StopMusic()
+            self.PauseMusic()
             if(self.ui.Shuffle.isChecked()):
                 shuffled_song = self.songs[random.randint(0,len(self.songs))]
                 self.shuffled_list.append(shuffled_song)
@@ -112,7 +113,6 @@ class Songs:
                 pygame.mixer.music.load(self.songs[self.playingRow])
                 self.ui.nowPlaying.setText("Çalan Şarkı: {}".format(self.songs[self.playingRow]))
                 self.ui.songs_list.selectRow(self.playingRow)
-            pygame.mixer.music.set_endevent(self.SONG_END)
             pygame.mixer.music.play()
             self.playing = True
         except:
@@ -121,7 +121,7 @@ class Songs:
     def PlayLast(self):
         if(self.playingRow - 1 < 0):
             return 0
-        self.StopMusic()
+        self.PauseMusic()
         try:
             if(self.ui.Shuffle.isChecked()):
                 self.shuffleRow -= 1
@@ -133,7 +133,6 @@ class Songs:
                 pygame.mixer.music.load(self.songs[self.playingRow])
                 self.ui.nowPlaying.setText("Çalan Şarkı: {}".format(self.songs[self.playingRow]))
                 self.ui.songs_list.selectRow(self.playingRow)
-            pygame.mixer.music.set_endevent(self.SONG_END)
             pygame.mixer.music.play()
             self.playing = True
         except:
@@ -162,7 +161,7 @@ class Songs:
             return False
 
     def check_event(self):
-        for event in pygame.event.get():
-            if event.type == self.SONG_END:
-                self.PlayNext()
-            
+        while True:
+            for event in pygame.event.get():
+                if event.type == self.SONG_END:
+                    self.PlayNext()

@@ -37,6 +37,10 @@
   <property name="windowTitle">
    <string>Mp3 Oynatıcı</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Designbolts-Free-Multimedia-Mp3-Player.ico</normaloff>Designbolts-Free-Multimedia-Mp3-Player.ico</iconset>
+  </property>
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
@@ -415,7 +419,7 @@ background-color: rgb(193, 193, 193);</string>
     <set>QAbstractItemView::NoEditTriggers</set>
    </property>
    <property name="selectionMode">
-    <enum>QAbstractItemView::SingleSelection</enum>
+    <enum>QAbstractItemView::ExtendedSelection</enum>
    </property>
    <property name="rowCount">
     <number>0</number>

@@ -24,6 +24,9 @@ class Ui_Frame(object):
         Frame.setSizePolicy(sizePolicy)
         Frame.setMinimumSize(QtCore.QSize(1214, 669))
         Frame.setMaximumSize(QtCore.QSize(1214, 669))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("Designbolts-Free-Multimedia-Mp3-Player.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        Frame.setWindowIcon(icon)
         Frame.setAutoFillBackground(False)
         Frame.setStyleSheet("selection-color: rgb(0, 0, 0);\n"
 "gridline-color: rgb(0, 0, 0);\n"
@@ -265,7 +268,7 @@ class Ui_Frame(object):
         self.songs_list.setLineWidth(1)
         self.songs_list.setMidLineWidth(1)
         self.songs_list.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
-        self.songs_list.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.songs_list.setSelectionMode(QtWidgets.QAbstractItemView.ExtendedSelection)
         self.songs_list.setRowCount(0)
         self.songs_list.setColumnCount(1)
         self.songs_list.setObjectName("songs_list")
