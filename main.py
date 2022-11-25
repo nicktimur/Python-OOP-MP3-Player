@@ -14,7 +14,6 @@ Frame = QtWidgets.QFrame()
 ui = Ui_Frame()
 ui.setupUi(Frame)
 Frame.show()
-Frame.addAction
 song = Songs(ui)
 
 class Worker(QThread):
