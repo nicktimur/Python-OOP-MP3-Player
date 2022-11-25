@@ -40,6 +40,7 @@ ui.SoundSlider.valueChanged.connect(song.setVolume)
 ui.songs_list.doubleClicked.connect(song.play_clicked)
 
 
+
 thread = Worker(song)
 thread.start()
 

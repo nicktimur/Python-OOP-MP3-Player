@@ -3,9 +3,11 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 from tkinter import filedialog
 from UI import *
 from PyQt5.QtWidgets import *
+from PyQt5.QtGui import QPixmap,QImage
 import pygame
 import random
-
+import mutagen
+from io import BytesIO
 
 
 class Songs:
@@ -98,6 +100,7 @@ class Songs:
 
     def PlayNext(self):
         try:
+            self.playingRow = self.ui.songs_list.currentRow()
             if(self.playingRow+2 > len(self.songs)):
                 return 0
             self.PauseMusic()
@@ -119,6 +122,7 @@ class Songs:
             pass
 
     def PlayLast(self):
+        self.playingRow = self.ui.songs_list.currentRow()
         if(self.playingRow - 1 < 0):
             return 0
         self.PauseMusic()
@@ -152,7 +156,6 @@ class Songs:
             self.playing = False
         except:
             pass
-
 
     def isChanged(self):
         if (self.ui.songs_list.currentRow() != self.playingRow):

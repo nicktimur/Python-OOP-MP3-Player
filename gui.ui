@@ -118,8 +118,8 @@ QPushButton:pressed {
    <widget class="QLineEdit" name="nowPlaying">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>19</y>
+      <x>330</x>
+      <y>10</y>
       <width>501</width>
       <height>21</height>
      </rect>
@@ -237,7 +237,7 @@ QPushButton:pressed {
    <widget class="QPushButton" name="Shuffle">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>450</x>
       <y>50</y>
       <width>41</width>
       <height>21</height>
@@ -387,6 +387,19 @@ border-radius: 4px;
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Ses Seviyesi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="img_box">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>101</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
