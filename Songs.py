@@ -1,6 +1,5 @@
 import os
 from tkinter import filedialog
-import tkinter as tk
 from UI import *
 from PyQt5.QtWidgets import *
 import pygame
@@ -37,10 +36,34 @@ class Songs:
         self.songList.clear()
 
     def setVolume(self):
-        new_volume = self.ui.SoundSlider.value() #0-100 arası bir değer alıyor
+        new_volume = self.ui.SoundSlider.value() # 0-100 arası bir değer alıyor
         new_volume = new_volume / 100
-        print(new_volume)
         pygame.mixer.music.set_volume(new_volume) # 0-1 arası float değerler istiyor
+
+    def play_clicked(self):
+        if (not self.isChanged()):
+            try:
+                if (self.ui.play.text() == "▶" and not self.playing):
+                    self.PlayMusic()
+                    self.ui.play.setText("||")
+
+                elif (self.ui.play.text() == "▶"and self.playing):
+                    self.UnpauseMusic()
+                    self.ui.play.setText("||")
+
+                elif (self.ui.play.text() == "||"):
+                    self.PauseMusic()
+                    self.ui.play.setText("▶")
+                
+            except:
+                self.ui.play.setText("▶")
+
+        else:
+            try:
+                self.ui.play.setText("||")
+                self.PlayMusic()
+            except:
+                self.ui.play.setText("▶")
 
     def AddtoTable(self, songsList):
         self.ui.songs_list.setRowCount(len(songsList))
@@ -118,11 +141,11 @@ class Songs:
 
     def PauseMusic(self):
         pygame.mixer.music.pause()
-        self.playing = False
+        self.playing = True
 
     def UnpauseMusic(self):
         pygame.mixer.music.unpause()
-        self.playing = False
+        self.playing = True
 
     def StopMusic(self):
         try:

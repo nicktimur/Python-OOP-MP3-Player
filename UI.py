@@ -264,6 +264,8 @@ class Ui_Frame(object):
 "background-color: rgb(193, 193, 193);")
         self.songs_list.setLineWidth(1)
         self.songs_list.setMidLineWidth(1)
+        self.songs_list.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.songs_list.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.songs_list.setRowCount(0)
         self.songs_list.setColumnCount(1)
         self.songs_list.setObjectName("songs_list")

@@ -18,34 +18,8 @@ song = Songs(ui)
 
 
 
-def play_clicked():
-    if (song.isChanged() == False):
-        try:
-            if (ui.play.text() == "▶" and song.playing):
-                song.PlayMusic()
-                ui.play.setText("||")
-
-            elif (ui.play.text() == "▶"and not song.playing):
-                song.UnpauseMusic()
-                ui.play.setText("||")
-
-            elif (ui.play.text() == "||"):
-                song.PauseMusic()
-                ui.play.setText("▶")
-                
-        except:
-            ui.play.setText("▶")
-
-    else:
-        try:
-            ui.play.setText("||")
-            song.PlayMusic()
-        except:
-            ui.play.setText("▶")
-
-
 #butonlar
-ui.play.clicked.connect(play_clicked)
+ui.play.clicked.connect(song.play_clicked)
 ui.find_path.clicked.connect(song.AddMusic)
 ui.nextButton.clicked.connect(song.PlayNext)
 ui.backButton.clicked.connect(song.PlayLast)
