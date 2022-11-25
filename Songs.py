@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QPixmap,QImage
 import pygame
 import random
-import mutagen
+import time
 from io import BytesIO
 
 
@@ -18,10 +18,12 @@ class Songs:
         self.shuffled_list = []
         self.shuffleRow = 0
         self.playingRow = 0
-        self.playing = False
+        self.status = "Waiting"
+        self.songlen = 0
         self.ui = ui
         self.path = ""
         self.SONG_END = pygame.USEREVENT+1
+        self.diff = 0
         
     @property
     def songs(self):
@@ -46,11 +48,11 @@ class Songs:
     def play_clicked(self):
         if (not self.isChanged()):
             try:
-                if (self.ui.play.text() == "▶" and not self.playing):
+                if (self.ui.play.text() == "▶" and self.status == "Waiting"):
                     self.PlayMusic()
                     self.ui.play.setText("||")
 
-                elif (self.ui.play.text() == "▶"and self.playing):
+                elif (self.ui.play.text() == "▶"and self.status == "Paused"):
                     self.UnpauseMusic()
                     self.ui.play.setText("||")
 
@@ -92,9 +94,11 @@ class Songs:
     def PlayMusic(self):
         self.playingRow = self.ui.songs_list.currentRow()
         pygame.mixer.music.set_endevent(self.SONG_END)
+        self.songlen = pygame.mixer.Sound(self.songs[self.playingRow]).get_length()
         pygame.mixer.music.load(self.songs[self.playingRow])
         pygame.mixer.music.play()
-        self.playing = True
+        self.diff = 0
+        self.status = "Playing"
         self.ui.nowPlaying.setText("Çalan Şarkı: {}".format(self.songs[self.playingRow]))
 
 
@@ -108,16 +112,19 @@ class Songs:
                 shuffled_song = self.songs[random.randint(0,len(self.songs))]
                 self.shuffled_list.append(shuffled_song)
                 self.shuffleRow = len(self.shuffled_list) - 1
+                self.songlen = pygame.mixer.Sound(shuffled_song).get_length()
                 pygame.mixer.music.load(shuffled_song)
                 self.ui.nowPlaying.setText("Çalan Şarkı: {}".format(shuffled_song))
                 self.ui.songs_list.selectRow(self.songs.index(shuffled_song))
             else:
                 self.playingRow = self.playingRow + 1
+                self.songlen = pygame.mixer.Sound(self.songs[self.playingRow]).get_length()
                 pygame.mixer.music.load(self.songs[self.playingRow])
                 self.ui.nowPlaying.setText("Çalan Şarkı: {}".format(self.songs[self.playingRow]))
                 self.ui.songs_list.selectRow(self.playingRow)
             pygame.mixer.music.play()
-            self.playing = True
+            self.diff = 0
+            self.status = "Playing"
         except:
             pass
 
@@ -129,31 +136,34 @@ class Songs:
         try:
             if(self.ui.Shuffle.isChecked()):
                 self.shuffleRow -= 1
+                self.songlen = pygame.mixer.Sound(self.shuffled_list[self.shuffleRow]).get_length()
                 pygame.mixer.music.load(self.shuffled_list[self.shuffleRow])
                 self.ui.nowPlaying.setText("Çalan Şarkı: {}".format(self.shuffled_list[self.shuffleRow]))
                 self.ui.songs_list.selectRow(self.songs.index(self.shuffled_list[self.shuffleRow]))
             else:
                 self.playingRow = self.playingRow - 1
+                self.songlen = pygame.mixer.Sound(self.songs[self.playingRow]).get_length()
                 pygame.mixer.music.load(self.songs[self.playingRow])
                 self.ui.nowPlaying.setText("Çalan Şarkı: {}".format(self.songs[self.playingRow]))
                 self.ui.songs_list.selectRow(self.playingRow)
             pygame.mixer.music.play()
-            self.playing = True
+            self.diff = 0
+            self.status = "Playing"
         except:
             pass
 
     def PauseMusic(self):
         pygame.mixer.music.pause()
-        self.playing = True
+        self.status = "Paused"
 
     def UnpauseMusic(self):
         pygame.mixer.music.unpause()
-        self.playing = True
+        self.status = "Playing"
 
     def StopMusic(self):
         try:
             pygame.mixer.music.stop()
-            self.playing = False
+            self.status = "Waiting"
         except:
             pass
 
@@ -164,7 +174,36 @@ class Songs:
             return False
 
     def check_event(self):
-        while True:
-            for event in pygame.event.get():
-                if event.type == self.SONG_END:
+        for event in pygame.event.get():
+            if event.type == self.SONG_END:
+                try:
                     self.PlayNext()
+                except:
+                    pass
+    
+    def sliderPress(self):
+        self.status = "Working"
+
+    def set_slider(self):
+        pass
+
+    def sliderRelease(self):
+        newtime = self.ui.PlaySlider.value()
+        realtime = (pygame.mixer.music.get_pos() / 1000)
+        self.diff = newtime - realtime
+        pygame.mixer.music.set_pos(newtime)
+        self.status = "Playing"
+
+    def set_time(self):
+        if(self.status == "Playing"):
+            sec = (pygame.mixer.music.get_pos() / 1000) + self.diff # Saniye dönüşümü ve fark ekleme
+            self.ui.PlaySlider.setMaximum(int(self.songlen))
+            self.ui.PlaySlider.setSliderPosition(int(sec))
+            temp = divmod(int(sec), 60)
+            min = temp[0]
+            sec = temp[1]
+            self.ui.time.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#dadada;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
+            return sec
+        else:
+            pass
+

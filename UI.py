@@ -40,7 +40,7 @@ class Ui_Frame(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.play = QtWidgets.QPushButton(self.frame)
-        self.play.setGeometry(QtCore.QRect(560, 50, 41, 41))
+        self.play.setGeometry(QtCore.QRect(560, 10, 41, 41))
         font = QtGui.QFont()
         font.setPointSize(22)
         self.play.setFont(font)
@@ -73,13 +73,13 @@ class Ui_Frame(object):
         self.play.setText("▶")
         self.play.setObjectName("play")
         self.nowPlaying = QtWidgets.QLineEdit(self.frame)
-        self.nowPlaying.setGeometry(QtCore.QRect(330, 10, 501, 21))
+        self.nowPlaying.setGeometry(QtCore.QRect(10, 10, 291, 20))
         self.nowPlaying.setStyleSheet("background-color: rgb(157, 157, 157);")
         self.nowPlaying.setText("")
         self.nowPlaying.setReadOnly(True)
         self.nowPlaying.setObjectName("nowPlaying")
         self.nextButton = QtWidgets.QPushButton(self.frame)
-        self.nextButton.setGeometry(QtCore.QRect(620, 50, 31, 31))
+        self.nextButton.setGeometry(QtCore.QRect(620, 10, 31, 31))
         font = QtGui.QFont()
         font.setPointSize(6)
         font.setBold(True)
@@ -116,7 +116,7 @@ class Ui_Frame(object):
 "    }")
         self.nextButton.setObjectName("nextButton")
         self.backButton = QtWidgets.QPushButton(self.frame)
-        self.backButton.setGeometry(QtCore.QRect(510, 50, 31, 31))
+        self.backButton.setGeometry(QtCore.QRect(510, 10, 31, 31))
         font = QtGui.QFont()
         font.setPointSize(6)
         font.setBold(True)
@@ -151,7 +151,7 @@ class Ui_Frame(object):
 "    }")
         self.backButton.setObjectName("backButton")
         self.Shuffle = QtWidgets.QPushButton(self.frame)
-        self.Shuffle.setGeometry(QtCore.QRect(450, 50, 41, 21))
+        self.Shuffle.setGeometry(QtCore.QRect(10, 40, 41, 21))
         font = QtGui.QFont()
         font.setPointSize(6)
         font.setBold(True)
@@ -260,10 +260,53 @@ class Ui_Frame(object):
 "    }\n"
 "")
         self.label.setObjectName("label")
-        self.img_box = QtWidgets.QLabel(self.frame)
-        self.img_box.setGeometry(QtCore.QRect(10, 0, 101, 91))
-        self.img_box.setText("")
-        self.img_box.setObjectName("img_box")
+        self.PlaySlider = QtWidgets.QSlider(self.frame)
+        self.PlaySlider.setGeometry(QtCore.QRect(350, 60, 461, 22))
+        self.PlaySlider.setStyleSheet("QSlider::groove:horizontal {\n"
+"border: 1px solid #bbb;\n"
+"background: white;\n"
+"height: 5px;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::sub-page:horizontal {\n"
+"background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,\n"
+"    stop: 0 #151515, stop: 1 #505050);\n"
+"\n"
+"border: 1px solid #777;\n"
+"height: 10px;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::add-page:horizontal {\n"
+"background: #fff;\n"
+"border: 1px solid #777;\n"
+"height: 10px;\n"
+"border-radius: 8px;\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal {\n"
+"background-color: rgb(0, 0, 0);\n"
+"border: 1px solid #777;\n"
+"width: 17px;\n"
+"height: 30px;\n"
+"margin-top: -7px;\n"
+"margin-bottom: -7px;\n"
+"border-radius: 9px;\n"
+"}\n"
+"\n"
+"\n"
+"")
+        self.PlaySlider.setMaximum(100)
+        self.PlaySlider.setProperty("value", 0)
+        self.PlaySlider.setSliderPosition(0)
+        self.PlaySlider.setTracking(True)
+        self.PlaySlider.setOrientation(QtCore.Qt.Horizontal)
+        self.PlaySlider.setObjectName("PlaySlider")
+        self.time = QtWidgets.QLabel(self.frame)
+        self.time.setGeometry(QtCore.QRect(306, 60, 31, 21))
+        self.time.setStyleSheet("")
+        self.time.setObjectName("time")
         self.songs_list = QtWidgets.QTableWidget(Frame)
         self.songs_list.setGeometry(QtCore.QRect(200, 0, 781, 571))
         self.songs_list.setMinimumSize(QtCore.QSize(781, 0))
@@ -300,6 +343,7 @@ class Ui_Frame(object):
         self.backButton.setText(_translate("Frame", "|<<"))
         self.Shuffle.setText(_translate("Frame", "Shuffle"))
         self.label.setText(_translate("Frame", "<html><head/><body><p align=\"center\">Ses Seviyesi</p></body></html>"))
+        self.time.setText(_translate("Frame", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
         item = self.songs_list.horizontalHeaderItem(0)
         item.setText(_translate("Frame", "Şarkı İsmi"))
         self.find_path.setText(_translate("Frame", "Şarkıları Ekle"))

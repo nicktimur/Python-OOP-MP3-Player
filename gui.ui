@@ -73,7 +73,7 @@ background-color: rgb(136, 136, 136);</string>
     <property name="geometry">
      <rect>
       <x>560</x>
-      <y>50</y>
+      <y>10</y>
       <width>41</width>
       <height>41</height>
      </rect>
@@ -118,10 +118,10 @@ QPushButton:pressed {
    <widget class="QLineEdit" name="nowPlaying">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>10</x>
       <y>10</y>
-      <width>501</width>
-      <height>21</height>
+      <width>291</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -138,7 +138,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>50</y>
+      <y>10</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -189,7 +189,7 @@ QPushButton:pressed {
     <property name="geometry">
      <rect>
       <x>510</x>
-      <y>50</y>
+      <y>10</y>
       <width>31</width>
       <height>31</height>
      </rect>
@@ -237,8 +237,8 @@ QPushButton:pressed {
    <widget class="QPushButton" name="Shuffle">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>50</y>
+      <x>10</x>
+      <y>40</y>
       <width>41</width>
       <height>21</height>
      </rect>
@@ -389,17 +389,82 @@ border-radius: 4px;
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Ses Seviyesi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="img_box">
+   <widget class="QSlider" name="PlaySlider">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>101</width>
-      <height>91</height>
+      <x>350</x>
+      <y>60</y>
+      <width>461</width>
+      <height>22</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:horizontal {
+border: 1px solid #bbb;
+background: white;
+height: 5px;
+border-radius: 4px;
+}
+
+QSlider::sub-page:horizontal {
+background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,
+    stop: 0 #151515, stop: 1 #505050);
+
+border: 1px solid #777;
+height: 10px;
+border-radius: 4px;
+}
+
+QSlider::add-page:horizontal {
+background: #fff;
+border: 1px solid #777;
+height: 10px;
+border-radius: 8px;
+}
+
+QSlider::handle:horizontal {
+background-color: rgb(0, 0, 0);
+border: 1px solid #777;
+width: 17px;
+height: 30px;
+margin-top: -7px;
+margin-bottom: -7px;
+border-radius: 9px;
+}
+
+
+</string>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="sliderPosition">
+     <number>0</number>
+    </property>
+    <property name="tracking">
+     <bool>true</bool>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="time">
+    <property name="geometry">
+     <rect>
+      <x>306</x>
+      <y>60</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
-     <string/>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>
