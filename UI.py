@@ -242,8 +242,11 @@ class Ui_Frame(object):
 "border-radius: 4px;\n"
 "}")
         self.SoundSlider.setMaximum(100)
+        self.SoundSlider.setSingleStep(1)
+        self.SoundSlider.setPageStep(10)
         self.SoundSlider.setProperty("value", 100)
         self.SoundSlider.setSliderPosition(100)
+        self.SoundSlider.setTracking(False)
         self.SoundSlider.setOrientation(QtCore.Qt.Horizontal)
         self.SoundSlider.setObjectName("SoundSlider")
         self.label = QtWidgets.QLabel(self.frame)
@@ -262,6 +265,8 @@ class Ui_Frame(object):
         self.label.setObjectName("label")
         self.PlaySlider = QtWidgets.QSlider(self.frame)
         self.PlaySlider.setGeometry(QtCore.QRect(350, 60, 461, 22))
+        self.PlaySlider.setMouseTracking(False)
+        self.PlaySlider.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.PlaySlider.setStyleSheet("QSlider::groove:horizontal {\n"
 "border: 1px solid #bbb;\n"
 "background: white;\n"
@@ -297,16 +302,93 @@ class Ui_Frame(object):
 "\n"
 "\n"
 "")
-        self.PlaySlider.setMaximum(100)
+        self.PlaySlider.setMaximum(0)
+        self.PlaySlider.setSingleStep(1)
+        self.PlaySlider.setPageStep(10)
         self.PlaySlider.setProperty("value", 0)
         self.PlaySlider.setSliderPosition(0)
         self.PlaySlider.setTracking(True)
         self.PlaySlider.setOrientation(QtCore.Qt.Horizontal)
+        self.PlaySlider.setInvertedAppearance(False)
+        self.PlaySlider.setInvertedControls(False)
+        self.PlaySlider.setTickPosition(QtWidgets.QSlider.NoTicks)
         self.PlaySlider.setObjectName("PlaySlider")
         self.time = QtWidgets.QLabel(self.frame)
         self.time.setGeometry(QtCore.QRect(306, 60, 31, 21))
         self.time.setStyleSheet("")
         self.time.setObjectName("time")
+        self.Backward = QtWidgets.QPushButton(self.frame)
+        self.Backward.setGeometry(QtCore.QRect(470, 10, 31, 21))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setKerning(False)
+        self.Backward.setFont(font)
+        self.Backward.setStyleSheet("QPushButton {\n"
+"    color: #333;\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 20px;\n"
+"    border-style: outset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
+"        );\n"
+"    }")
+        self.Backward.setObjectName("Backward")
+        self.Forward = QtWidgets.QPushButton(self.frame)
+        self.Forward.setGeometry(QtCore.QRect(660, 10, 31, 21))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setKerning(False)
+        self.Forward.setFont(font)
+        self.Forward.setStyleSheet("QPushButton {\n"
+"    color: #333;\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 20px;\n"
+"    border-style: outset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
+"        );\n"
+"    }")
+        self.Forward.setObjectName("Forward")
+        self.fullTime = QtWidgets.QLabel(self.frame)
+        self.fullTime.setGeometry(QtCore.QRect(820, 60, 31, 21))
+        self.fullTime.setStyleSheet("")
+        self.fullTime.setObjectName("fullTime")
         self.songs_list = QtWidgets.QTableWidget(Frame)
         self.songs_list.setGeometry(QtCore.QRect(200, 0, 781, 571))
         self.songs_list.setMinimumSize(QtCore.QSize(781, 0))
@@ -344,6 +426,9 @@ class Ui_Frame(object):
         self.Shuffle.setText(_translate("Frame", "Shuffle"))
         self.label.setText(_translate("Frame", "<html><head/><body><p align=\"center\">Ses Seviyesi</p></body></html>"))
         self.time.setText(_translate("Frame", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
+        self.Backward.setText(_translate("Frame", "↩"))
+        self.Forward.setText(_translate("Frame", "↪"))
+        self.fullTime.setText(_translate("Frame", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
         item = self.songs_list.horizontalHeaderItem(0)
         item.setText(_translate("Frame", "Şarkı İsmi"))
         self.find_path.setText(_translate("Frame", "Şarkıları Ekle"))

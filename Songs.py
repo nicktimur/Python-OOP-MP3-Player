@@ -164,6 +164,7 @@ class Songs:
         try:
             pygame.mixer.music.stop()
             self.status = "Waiting"
+            self.ui.PlaySlider.setMaximum(0)
         except:
             pass
 
@@ -176,13 +177,13 @@ class Songs:
     def check_event(self):
         for event in pygame.event.get():
             if event.type == self.SONG_END:
-                try:
-                    self.PlayNext()
-                except:
-                    pass
+                self.PlayNext()
     
     def sliderPress(self):
-        self.status = "Working"
+        if(self.status == "Playing"):    
+            self.status = "Setting"
+        else:
+            self.status = "Paused"
 
     def set_slider(self):
         pass
@@ -192,18 +193,34 @@ class Songs:
         realtime = (pygame.mixer.music.get_pos() / 1000)
         self.diff = newtime - realtime
         pygame.mixer.music.set_pos(newtime)
-        self.status = "Playing"
+        if self.status == "Setting":
+            self.status = "Playing"
 
     def set_time(self):
         if(self.status == "Playing"):
             sec = (pygame.mixer.music.get_pos() / 1000) + self.diff # Saniye dönüşümü ve fark ekleme
+            remaining = self.songlen - sec #Kalan saniyeyi hesaplar
             self.ui.PlaySlider.setMaximum(int(self.songlen))
             self.ui.PlaySlider.setSliderPosition(int(sec))
             temp = divmod(int(sec), 60)
             min = temp[0]
             sec = temp[1]
             self.ui.time.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#dadada;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
-            return sec
+            temp = divmod(int(remaining), 60) #Kalan sürenin hesabı
+            min = temp[0]#Kalan sürenin dakikası
+            sec = temp[1]#Kalan sürenin saniyesi
+            self.ui.fullTime.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#dadada;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
         else:
             pass
 
+    def forward(self):
+        pos = self.ui.PlaySlider.value()
+        self.ui.PlaySlider.setSliderPosition(pos + 10) #Slider pozisyonunu 10 saniye ileri alıyorum
+        self.diff += 10 #Gerçek çalma zamanıyla aradaki fark 10 saniye açıldı
+        pygame.mixer.music.set_pos(pos + 10) #Şarkı 10 saniye ileri alındı
+
+    def backward(self):
+        pos = self.ui.PlaySlider.value()
+        self.ui.PlaySlider.setSliderPosition(pos - 10) #Slider pozisyonunu 10 saniye geri alıyorum
+        self.diff -= 10 #Gerçek çalma zamanıyla aradaki fark 10 saniye kapandı
+        pygame.mixer.music.set_pos(pos - 10) #Şarkı 10 saniye geri alındı

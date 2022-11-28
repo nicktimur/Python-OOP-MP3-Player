@@ -8,7 +8,6 @@ from UI import *
 from Songs import Songs
 
 
-
 app = QApplication(sys.argv)
 Frame = QtWidgets.QFrame()
 ui = Ui_Frame()
@@ -17,30 +16,23 @@ Frame.show()
 song = Songs(ui)
 
 class Worker(QThread):
-    def __init__(self, song):
-        super().__init__()
-        self.song = song
-
     def run(self):
         try:
             while True:
-                if(self.song.status == "Playing"):
-                    time.sleep(0.5)
-                    self.song.check_event()
+                if(song.status == "Playing"):
+                    song.check_event()
         except:
             pass
 
 class TimeSetter(Worker):
     def run(self):
         while True:
-            if(self.song.status == "Playing"):
+            if(song.status == "Playing"):
                 try:
-                    self.song.set_time()
+                    song.set_time()
                 except:
                     pass
         
-
-
 
 
 #butonlar
@@ -52,13 +44,16 @@ ui.SoundSlider.valueChanged.connect(song.setVolume)
 ui.songs_list.doubleClicked.connect(song.play_clicked)
 ui.PlaySlider.sliderPressed.connect(song.sliderPress)
 ui.PlaySlider.sliderReleased.connect(song.sliderRelease)
+ui.Backward.clicked.connect(song.backward)
+ui.Forward.clicked.connect(song.forward)
 
 
-timeSetter = TimeSetter(song)
+
+timeSetter = TimeSetter()
 timeSetter.start()
 
 
-thread = Worker(song)
+thread = Worker()
 thread.start()
 
 
