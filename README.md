@@ -12,20 +12,18 @@
 
 # Eklemeyi düşündüğüm fikirler:
 
-- [ ] Kullanıcı classı eklemek ve sqlite veritabanı kullanarak kayıt ol giriş yap sistemi ve arayüzü oluşturmak
-
+- [ ] Şimdilik fikir yok
 
 
 
 # Şu anda kullanılan classlar:
 - [x] Songs Class,
 - [x] UI Class
+- [x] İki tane Qthread sınıfı
 
 
 
 # Eklenecekler:
-- [ ] User Class
-- [ ] SignIn-ui Class
-- [ ] SignUp-ui Class
+- [ ] Şu anda eklenecek fikir yok
 
 - <b>Aklıma geldikçe güncellerim olabildiğince çok class olmalı tabi arayüz classları haricinde</b>
