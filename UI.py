@@ -31,10 +31,11 @@ class Ui_Frame(object):
         Frame.setStyleSheet("selection-color: rgb(0, 0, 0);\n"
 "gridline-color: rgb(0, 0, 0);\n"
 "border-color: rgb(80, 80, 80);\n"
-"background-color: rgb(136, 136, 136);")
+"background-color: rgb(136, 136, 136);\n"
+"background-color: rgb(24, 24, 24);")
         self.frame = QtWidgets.QFrame(Frame)
         self.frame.setGeometry(QtCore.QRect(0, 570, 1221, 101))
-        self.frame.setStyleSheet("background-color: rgb(71, 71, 71);\n"
+        self.frame.setStyleSheet("background-color: rgb(33, 33, 33);\n"
 "")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -45,36 +46,27 @@ class Ui_Frame(object):
         font.setPointSize(22)
         self.play.setFont(font)
         self.play.setStyleSheet("QPushButton {\n"
-"    color: #333;\n"
-"    border: 2px solid #555;\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
 "    border-radius: 20px;\n"
 "    border-style: outset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
-"        );\n"
-"    padding: 5px;\n"
+"    background:  rgb(50, 50, 50);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
-"        );\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
 "    }\n"
 "\n"
 "QPushButton:pressed {\n"
 "    border-style: inset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
-"        );\n"
+"    background: rgb(15, 15, 15);\n"
 "    }")
         self.play.setText("▶")
         self.play.setObjectName("play")
         self.nowPlaying = QtWidgets.QLineEdit(self.frame)
         self.nowPlaying.setGeometry(QtCore.QRect(10, 10, 291, 20))
-        self.nowPlaying.setStyleSheet("background-color: rgb(157, 157, 157);")
+        self.nowPlaying.setStyleSheet("background-color:  rgb(107, 107, 107);")
         self.nowPlaying.setText("")
         self.nowPlaying.setReadOnly(True)
         self.nowPlaying.setObjectName("nowPlaying")
@@ -89,30 +81,21 @@ class Ui_Frame(object):
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.nextButton.setFont(font)
         self.nextButton.setStyleSheet("QPushButton {\n"
-"    color: #333;\n"
-"    border: 2px solid #555;\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
 "    border-radius: 20px;\n"
 "    border-style: outset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
-"        );\n"
-"    padding: 5px;\n"
+"    background:  rgb(50, 50, 50);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
-"        );\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
 "    }\n"
 "\n"
 "QPushButton:pressed {\n"
 "    border-style: inset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
-"        );\n"
+"    background: rgb(15, 15, 15);\n"
 "    }")
         self.nextButton.setObjectName("nextButton")
         self.backButton = QtWidgets.QPushButton(self.frame)
@@ -124,30 +107,21 @@ class Ui_Frame(object):
         font.setKerning(False)
         self.backButton.setFont(font)
         self.backButton.setStyleSheet("QPushButton {\n"
-"    color: #333;\n"
-"    border: 2px solid #555;\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
 "    border-radius: 20px;\n"
 "    border-style: outset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
-"        );\n"
-"    padding: 5px;\n"
+"    background:  rgb(50, 50, 50);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
-"        );\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
 "    }\n"
 "\n"
 "QPushButton:pressed {\n"
 "    border-style: inset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
-"        );\n"
+"    background: rgb(15, 15, 15);\n"
 "    }")
         self.backButton.setObjectName("backButton")
         self.Shuffle = QtWidgets.QPushButton(self.frame)
@@ -159,29 +133,20 @@ class Ui_Frame(object):
         font.setKerning(False)
         self.Shuffle.setFont(font)
         self.Shuffle.setStyleSheet("QPushButton {\n"
-"    color: #333;\n"
+"    color: #ababab;\n"
 "    border: 2px solid #555;\n"
 "    border-radius: 20px;\n"
 "    border-style: outset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
-"        );\n"
+"    background:  rgb(107, 107, 107);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
-"        );\n"
+"    background:  rgb(75, 75, 75);\n"
 "    }\n"
 "\n"
 "QPushButton:checked {\n"
 "    border-style: inset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
-"        );\n"
+"    background: rgb(55, 55, 55);\n"
 "    }")
         self.Shuffle.setCheckable(True)
         self.Shuffle.setObjectName("Shuffle")
@@ -195,9 +160,7 @@ class Ui_Frame(object):
 "}\n"
 "\n"
 "QSlider::sub-page:horizontal {\n"
-"background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,\n"
-"    stop: 0 #005f00, stop: 1 #66ff00);\n"
-"\n"
+"background: rgb(50, 50, 50);\n"
 "border: 1px solid #777;\n"
 "height: 10px;\n"
 "border-radius: 4px;\n"
@@ -211,7 +174,7 @@ class Ui_Frame(object):
 "}\n"
 "\n"
 "QSlider::handle:horizontal {\n"
-"background-color: rgb(11, 144, 27);\n"
+"background-color:  rgb(0, 0, 0);\n"
 "border: 1px solid #777;\n"
 "width: 13px;\n"
 "margin-top: -2px;\n"
@@ -256,10 +219,7 @@ class Ui_Frame(object):
 "    border: 2px solid #555;\n"
 "    border-radius: 20px;\n"
 "    border-style: outset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
-"        );\n"
+"    background: rgb(107, 107, 107);\n"
 "    }\n"
 "")
         self.label.setObjectName("label")
@@ -270,7 +230,7 @@ class Ui_Frame(object):
         self.PlaySlider.setStyleSheet("QSlider::groove:horizontal {\n"
 "border: 1px solid #bbb;\n"
 "background: white;\n"
-"height: 5px;\n"
+"height: 4px;\n"
 "border-radius: 4px;\n"
 "}\n"
 "\n"
@@ -326,29 +286,21 @@ class Ui_Frame(object):
         font.setKerning(False)
         self.Backward.setFont(font)
         self.Backward.setStyleSheet("QPushButton {\n"
-"    color: #333;\n"
-"    border: 2px solid #555;\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
 "    border-radius: 20px;\n"
 "    border-style: outset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
-"        );\n"
+"    background:  rgb(50, 50, 50);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
-"        );\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
 "    }\n"
 "\n"
 "QPushButton:pressed {\n"
 "    border-style: inset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
-"        );\n"
+"    background: rgb(15, 15, 15);\n"
 "    }")
         self.Backward.setObjectName("Backward")
         self.Forward = QtWidgets.QPushButton(self.frame)
@@ -360,29 +312,21 @@ class Ui_Frame(object):
         font.setKerning(False)
         self.Forward.setFont(font)
         self.Forward.setStyleSheet("QPushButton {\n"
-"    color: #333;\n"
-"    border: 2px solid #555;\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
 "    border-radius: 20px;\n"
 "    border-style: outset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
-"        );\n"
+"    background:  rgb(50, 50, 50);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
-"    background: qradialgradient(\n"
-"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
-"        );\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
 "    }\n"
 "\n"
 "QPushButton:pressed {\n"
 "    border-style: inset;\n"
-"    background: qradialgradient(\n"
-"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
-"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
-"        );\n"
+"    background: rgb(15, 15, 15);\n"
 "    }")
         self.Forward.setObjectName("Forward")
         self.fullTime = QtWidgets.QLabel(self.frame)
@@ -392,15 +336,38 @@ class Ui_Frame(object):
         self.songs_list = QtWidgets.QTableWidget(Frame)
         self.songs_list.setGeometry(QtCore.QRect(200, 0, 781, 571))
         self.songs_list.setMinimumSize(QtCore.QSize(781, 0))
-        self.songs_list.setStyleSheet("\n"
-"background-color: rgb(193, 193, 193);")
+        self.songs_list.setStyleSheet("QWidget {\n"
+"    background-color: #333333;\n"
+"    color: #b9b9b9;\n"
+"}\n"
+"QTableView {\n"
+"    selection-background-color:  rgb(136, 136, 136);\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #646464;\n"
+"    border: 1px solid #272727;\n"
+"    font-size: 12pt;\n"
+"}\n"
+"\n"
+"QTableWidget {\n"
+"    gridline-color: #272727;\n"
+"    font-size: 12pt;\n"
+"}\n"
+"\n"
+"QTableWidget QTableCornerButton::section {\n"
+"    background-color: #646464;\n"
+"    border: 1px solid #272727;\n"
+"}")
         self.songs_list.setLineWidth(1)
         self.songs_list.setMidLineWidth(1)
         self.songs_list.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.songs_list.setSelectionMode(QtWidgets.QAbstractItemView.ExtendedSelection)
-        self.songs_list.setRowCount(0)
+        self.songs_list.setRowCount(1)
         self.songs_list.setColumnCount(1)
         self.songs_list.setObjectName("songs_list")
+        item = QtWidgets.QTableWidgetItem()
+        self.songs_list.setVerticalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         item.setTextAlignment(QtCore.Qt.AlignCenter)
         font = QtGui.QFont()
@@ -409,10 +376,13 @@ class Ui_Frame(object):
         font.setUnderline(False)
         item.setFont(font)
         self.songs_list.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.songs_list.setItem(0, 0, item)
         self.songs_list.horizontalHeader().setDefaultSectionSize(780)
         self.find_path = QtWidgets.QPushButton(Frame)
         self.find_path.setGeometry(QtCore.QRect(60, 510, 75, 23))
-        self.find_path.setStyleSheet("background-color: rgb(136, 136, 136);")
+        self.find_path.setStyleSheet("\n"
+"background-color: rgb(107, 107, 107);")
         self.find_path.setObjectName("find_path")
 
         self.retranslateUi(Frame)
@@ -429,8 +399,15 @@ class Ui_Frame(object):
         self.Backward.setText(_translate("Frame", "↩"))
         self.Forward.setText(_translate("Frame", "↪"))
         self.fullTime.setText(_translate("Frame", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
+        item = self.songs_list.verticalHeaderItem(0)
+        item.setText(_translate("Frame", "1"))
         item = self.songs_list.horizontalHeaderItem(0)
         item.setText(_translate("Frame", "Şarkı İsmi"))
+        __sortingEnabled = self.songs_list.isSortingEnabled()
+        self.songs_list.setSortingEnabled(False)
+        item = self.songs_list.item(0, 0)
+        item.setText(_translate("Frame", "eehheeeeeeeee"))
+        self.songs_list.setSortingEnabled(__sortingEnabled)
         self.find_path.setText(_translate("Frame", "Şarkıları Ekle"))
 
 
