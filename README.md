@@ -19,7 +19,8 @@
 # Şu anda kullanılan classlar:
 - [x] Songs Class,
 - [x] UI Class
-- [x] İki tane Qthread sınıfı
+- [x] İki tane Qthread alt sınıfı
+- [x] Main sınıfı
 
 
 

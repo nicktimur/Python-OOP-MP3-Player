@@ -246,7 +246,7 @@ class Ui_Frame(object):
         self.SoundSlider.setPageStep(10)
         self.SoundSlider.setProperty("value", 100)
         self.SoundSlider.setSliderPosition(100)
-        self.SoundSlider.setTracking(False)
+        self.SoundSlider.setTracking(True)
         self.SoundSlider.setOrientation(QtCore.Qt.Horizontal)
         self.SoundSlider.setObjectName("SoundSlider")
         self.label = QtWidgets.QLabel(self.frame)

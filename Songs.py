@@ -3,11 +3,9 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 from tkinter import filedialog
 from UI import *
 from PyQt5.QtWidgets import *
-from PyQt5.QtGui import QPixmap,QImage
 import pygame
 import random
-import time
-from io import BytesIO
+
 
 
 class Songs:
@@ -79,7 +77,10 @@ class Songs:
     def AddMusic(self):
         del self.songs
         self.StopMusic()
+        self.ui.play.setText("▶")
+        temp = self.path
         self.path = filedialog.askdirectory()
+        self.ui.songs_list.setRowCount(0)
         if self.path:
             os.chdir(self.path)
             temp = os.listdir(self.path)
@@ -89,7 +90,16 @@ class Songs:
             del temp
             self.AddtoTable(self.songs)
             self.playingRow = 0
-
+        else:
+            self.path = temp
+            os.chdir(self.path)
+            temp = os.listdir(self.path)
+            for song in temp:
+                if song.endswith(".mp3"):
+                    self.songs.append(song)
+            del temp
+            self.AddtoTable(self.songs)
+            self.playingRow = 0
 
     def PlayMusic(self):
         self.playingRow = self.ui.songs_list.currentRow()
@@ -106,7 +116,7 @@ class Songs:
         try:
             self.playingRow = self.ui.songs_list.currentRow()
             if(self.playingRow+2 > len(self.songs)):
-                return 0
+                self.playingRow = -1
             self.PauseMusic()
             if(self.ui.Shuffle.isChecked()):
                 shuffled_song = self.songs[random.randint(0,len(self.songs))]
