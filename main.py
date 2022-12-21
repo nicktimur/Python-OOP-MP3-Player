@@ -1,9 +1,11 @@
+import os
 import sys
 from PyQt5 import *
 from PyQt5.QtWidgets import *
 from UI import *
 from Songs import Songs
 from Workers import Worker, TimeSetter
+import sqlite3
 
 class Main():
     def __init__(self) -> None: 
@@ -12,10 +14,17 @@ class Main():
         self.ui = Ui_Frame()
         self.ui.setupUi(self.Frame)
         self.Frame.show()
+        self.DB_DIR = os.path.join(os.getcwd() + "/path.db")
         self.song = Songs(self.ui)
         self.timeSetter = TimeSetter(self.song)
         self.thread = Worker(self.song)
 
+
+    def Create_Table(self):
+        with sqlite3.connect(self.DB_DIR) as db:
+            cur = db.cursor()
+            cmd = "CREATE TABLE IF NOT EXISTS path(path TEXT)"
+            cur.execute(cmd)
 
     def main(self):   
         #butonlar
@@ -37,5 +46,6 @@ class Main():
         sys.exit(self.app.exec_())
 
 main = Main()
-main.main() # al sana beş class bro
+main.Create_Table()
+main.main()
 

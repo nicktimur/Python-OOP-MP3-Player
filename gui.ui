@@ -607,7 +607,7 @@ QTableWidget QTableCornerButton::section {
     <enum>QAbstractItemView::ExtendedSelection</enum>
    </property>
    <property name="rowCount">
-    <number>1</number>
+    <number>0</number>
    </property>
    <property name="columnCount">
     <number>1</number>
@@ -615,11 +615,6 @@ QTableWidget QTableCornerButton::section {
    <attribute name="horizontalHeaderDefaultSectionSize">
     <number>780</number>
    </attribute>
-   <row>
-    <property name="text">
-     <string>1</string>
-    </property>
-   </row>
    <column>
     <property name="text">
      <string>Şarkı İsmi</string>
@@ -635,11 +630,6 @@ QTableWidget QTableCornerButton::section {
      <set>AlignCenter</set>
     </property>
    </column>
-   <item row="0" column="0">
-    <property name="text">
-     <string>eehheeeeeeeee</string>
-    </property>
-   </item>
   </widget>
   <widget class="QPushButton" name="find_path">
    <property name="geometry">

@@ -5,6 +5,7 @@ from UI import *
 from PyQt5.QtWidgets import *
 import pygame
 import random
+import sqlite3
 
 
 
@@ -22,7 +23,30 @@ class Songs:
         self.path = ""
         self.SONG_END = pygame.USEREVENT+1
         self.diff = 0
-        
+        self.DB_DIR = os.path.join(os.getcwd() + "/path.db")
+        self.AddMusicWithDb()
+
+    def AddMusicWithDb(self):
+        try:
+            with sqlite3.connect(self.DB_DIR) as db:
+                print(self.DB_DIR)
+                cur = db.cursor()
+                cmd = "SELECT path FROM path"
+                cur.execute(cmd)
+            self.path = cur.fetchone()[0]
+            self.ui.play.setText("▶")
+            self.ui.songs_list.setRowCount(0)
+            os.chdir(self.path)
+            temp = os.listdir(self.path)
+            for song in temp:
+                if song.endswith(".mp3"):
+                    self.songs.append(song)
+            del temp
+            self.AddtoTable(self.songs)
+            self.playingRow = 0
+        except:
+            pass
+
     @property
     def songs(self):
         return self.songList
@@ -82,6 +106,13 @@ class Songs:
         self.path = filedialog.askdirectory()
         self.ui.songs_list.setRowCount(0)
         if self.path:
+            with sqlite3.connect(self.DB_DIR) as db:
+                cur = db.cursor()
+                cmd = "DELETE FROM path"
+                cur.execute(cmd)
+                cmd = "INSERT INTO path VALUES ('{}')".format(self.path)
+                cur.execute(cmd)
+
             os.chdir(self.path)
             temp = os.listdir(self.path)
             for song in temp:
