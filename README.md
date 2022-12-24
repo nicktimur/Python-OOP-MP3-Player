@@ -1,5 +1,5 @@
 # Öğrenciler
-- [x] Alp Doruk Şengün - 2021717001?
+- [x] Alp Doruk Şengün - 20217170015
 - [x] Timur Karakaş - 20217170062
 
 # Gereken eklentiler için komutlar:
