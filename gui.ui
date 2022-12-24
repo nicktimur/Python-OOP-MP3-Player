@@ -81,7 +81,8 @@ background-color: rgb(24, 24, 24);</string>
     </property>
     <property name="font">
      <font>
-      <pointsize>22</pointsize>
+      <family>MS UI Gothic</family>
+      <pointsize>20</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -116,8 +117,18 @@ QPushButton:pressed {
       <height>20</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Yu Gothic UI</family>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color:  rgb(107, 107, 107);</string>
+     <string notr="true">background-color:  rgb(75, 75, 75);
+color: #c2c2c2;
+border: 2px solid #313131;
+border-radius: 5px;
+border-style: outset;
+</string>
     </property>
     <property name="text">
      <string/>
@@ -137,9 +148,10 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <pointsize>6</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>Franklin Gothic Demi</family>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
       <strikeout>false</strikeout>
       <stylestrategy>PreferDefault</stylestrategy>
       <kerning>false</kerning>
@@ -149,7 +161,7 @@ QPushButton:pressed {
      <string notr="true">QPushButton {
     color: #c2c2c2;
     border: 2px solid #313131;
-    border-radius: 20px;
+    border-radius: 5px;
     border-style: outset;
     background:  rgb(50, 50, 50);
     }
@@ -179,9 +191,10 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <pointsize>6</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>Franklin Gothic Demi</family>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
       <kerning>false</kerning>
      </font>
     </property>
@@ -189,7 +202,7 @@ QPushButton:pressed {
      <string notr="true">QPushButton {
     color: #c2c2c2;
     border: 2px solid #313131;
-    border-radius: 20px;
+    border-radius: 5px;
     border-style: outset;
     background:  rgb(50, 50, 50);
     }
@@ -219,19 +232,20 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
-      <pointsize>6</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
+      <family>Yu Gothic UI</family>
+      <pointsize>7</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
       <kerning>false</kerning>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    color: #ababab;
-    border: 2px solid #555;
-    border-radius: 20px;
+    color: #c2c2c2;
+    border: 2px solid #313131;
+    border-radius: 5px;
     border-style: outset;
-    background:  rgb(107, 107, 107);
+    background:  rgb(50, 50, 50);
     }
 
 QPushButton:hover {
@@ -254,7 +268,7 @@ QPushButton:checked {
     <property name="geometry">
      <rect>
       <x>1000</x>
-      <y>60</y>
+      <y>50</y>
       <width>160</width>
       <height>22</height>
      </rect>
@@ -263,55 +277,56 @@ QPushButton:checked {
      <string notr="true">QSlider::groove:horizontal {
 border: 1px solid #bbb;
 background: white;
-height: 10px;
-border-radius: 4px;
+height: 4px;
+border-radius: 3px;
 }
 
 QSlider::sub-page:horizontal {
-background: rgb(50, 50, 50);
+background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,
+    stop: 0 #151515, stop: 1 #505050);
 border: 1px solid #777;
 height: 10px;
-border-radius: 4px;
+border-radius: 3px;
 }
+
 
 QSlider::add-page:horizontal {
 background: #fff;
-border: 1px solid #777;
+border: 3px solid #777;
 height: 10px;
-border-radius: 4px;
+border-radius: 2.5px;
 }
 
 QSlider::handle:horizontal {
-background-color:  rgb(0, 0, 0);
-border: 1px solid #777;
-width: 13px;
-margin-top: -2px;
-margin-bottom: -2px;
-border-radius: 4px;
+background-color: rgb(50, 50, 50);
+border: 1px solid #313131;;
+width: 17px;
+height: 30px;
+margin-top: -7px;
+margin-bottom: -7px;
+border-radius: 9px;
+border-style: outset;
 }
 
 QSlider::handle:horizontal:hover {
-background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
-    stop:0 #fff, stop:1 #ddd);
-border: 1px solid #444;
-border-radius: 4px;
+background-color: rgb(30, 30, 30);
+border: 1px solid #2a2a2a;
+width: 17px;
+height: 30px;
+margin-top: -7px;
+margin-bottom: -7px;
+border-radius: 9px;
+border-style: outset;
+
 }
 
-QSlider::sub-page:horizontal:disabled {
-background: #bbb;
-border-color: #999;
+QSlider::handle:horizontal:pressed{
+    border-style: inset;
+    background: rgb(15, 15, 15);
 }
 
-QSlider::add-page:horizontal:disabled {
-background: #eee;
-border-color: #999;
-}
 
-QSlider::handle:horizontal:disabled {
-background: #eee;
-border: 1px solid #aaa;
-border-radius: 4px;
-}</string>
+</string>
     </property>
     <property name="maximum">
      <number>100</number>
@@ -338,19 +353,24 @@ border-radius: 4px;
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>1050</x>
-      <y>40</y>
+      <x>1040</x>
+      <y>30</y>
       <width>71</width>
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Yu Gothic UI</family>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
-    color: #333;
-    border: 2px solid #555;
-    border-radius: 20px;
+    color: #c2c2c2;
+    border: 2px solid #313131;
+    border-radius: 5px;
     border-style: outset;
-    background: rgb(107, 107, 107);
+    background:  rgb(50, 50, 50);
     }
 </string>
     </property>
@@ -378,33 +398,51 @@ border-radius: 4px;
 border: 1px solid #bbb;
 background: white;
 height: 4px;
-border-radius: 4px;
+border-radius: 3px;
 }
 
 QSlider::sub-page:horizontal {
 background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,
     stop: 0 #151515, stop: 1 #505050);
-
 border: 1px solid #777;
 height: 10px;
-border-radius: 4px;
+border-radius: 3px;
 }
+
 
 QSlider::add-page:horizontal {
 background: #fff;
-border: 1px solid #777;
+border: 3px solid #777;
 height: 10px;
-border-radius: 8px;
+border-radius: 2.5px;
 }
 
 QSlider::handle:horizontal {
-background-color: rgb(0, 0, 0);
-border: 1px solid #777;
+background-color: rgb(50, 50, 50);
+border: 1px solid #313131;;
 width: 17px;
 height: 30px;
 margin-top: -7px;
 margin-bottom: -7px;
 border-radius: 9px;
+border-style: outset;
+}
+
+QSlider::handle:horizontal:hover {
+background-color: rgb(30, 30, 30);
+border: 1px solid #2a2a2a;
+width: 17px;
+height: 30px;
+margin-top: -7px;
+margin-bottom: -7px;
+border-radius: 9px;
+border-style: outset;
+
+}
+
+QSlider::handle:horizontal:pressed{
+    border-style: inset;
+    background: rgb(15, 15, 15);
 }
 
 
@@ -450,6 +488,12 @@ border-radius: 9px;
       <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Yu Gothic UI</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
@@ -468,6 +512,7 @@ border-radius: 9px;
     </property>
     <property name="font">
      <font>
+      <family>Georgia</family>
       <pointsize>14</pointsize>
       <weight>50</weight>
       <bold>false</bold>
@@ -478,7 +523,7 @@ border-radius: 9px;
      <string notr="true">QPushButton {
     color: #c2c2c2;
     border: 2px solid #313131;
-    border-radius: 20px;
+    border-radius: 5px;
     border-style: outset;
     background:  rgb(50, 50, 50);
     }
@@ -508,6 +553,7 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Georgia</family>
       <pointsize>14</pointsize>
       <weight>50</weight>
       <bold>false</bold>
@@ -518,7 +564,7 @@ QPushButton:pressed {
      <string notr="true">QPushButton {
     color: #c2c2c2;
     border: 2px solid #313131;
-    border-radius: 20px;
+    border-radius: 5px;
     border-style: outset;
     background:  rgb(50, 50, 50);
     }
@@ -546,6 +592,12 @@ QPushButton:pressed {
       <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Yu Gothic UI</family>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
@@ -571,16 +623,19 @@ QPushButton:pressed {
    </property>
    <property name="styleSheet">
     <string notr="true">QWidget {
-    background-color: #333333;
-    color: #b9b9b9;
+    background-color: #313131;
+    color: #c2c2c2;
+	border-radius: 3px;
 }
 QTableView {
-    selection-background-color:  rgb(136, 136, 136);
+    selection-background-color:  rgb(75, 75, 75);
+	color: #c2c2c2;
 }
 
 QHeaderView::section {
     background-color: #646464;
-    border: 1px solid #272727;
+    border: 1px solid #181818;
+	border-radius: 1px;
     font-size: 12pt;
 }
 
@@ -592,6 +647,7 @@ QTableWidget {
 QTableWidget QTableCornerButton::section {
     background-color: #646464;
     border: 1px solid #272727;
+	border-radius: 2px;
 }</string>
    </property>
    <property name="lineWidth">
@@ -621,7 +677,7 @@ QTableWidget QTableCornerButton::section {
     </property>
     <property name="font">
      <font>
-      <family>Sans Serif Collection</family>
+      <family>Yu Gothic UI</family>
       <pointsize>8</pointsize>
       <underline>false</underline>
      </font>
@@ -635,17 +691,74 @@ QTableWidget QTableCornerButton::section {
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>510</y>
+     <y>530</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI</family>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">
-background-color: rgb(107, 107, 107);</string>
+    <string notr="true">QPushButton {
+    color: #c2c2c2;
+    border: 2px solid #313131;
+    border-radius: 5px;
+    border-style: outset;
+    background:  rgb(50, 50, 50);
+    }
+
+QPushButton:hover {
+    background:  rgb(30, 30, 30);
+	border: 2px solid #2a2a2a;
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: rgb(15, 15, 15);
+    }</string>
    </property>
    <property name="text">
     <string>Şarkıları Ekle</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="about_us">
+   <property name="geometry">
+    <rect>
+     <x>1060</x>
+     <y>530</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: #c2c2c2;
+    border: 2px solid #313131;
+    border-radius: 5px;
+    border-style: outset;
+    background:  rgb(50, 50, 50);
+    }
+
+QPushButton:hover {
+    background:  rgb(30, 30, 30);
+	border: 2px solid #2a2a2a;
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: rgb(15, 15, 15);
+    }</string>
+   </property>
+   <property name="text">
+    <string>Hakkımızda</string>
    </property>
   </widget>
  </widget>

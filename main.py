@@ -26,6 +26,9 @@ class Main():
             cmd = "CREATE TABLE IF NOT EXISTS path(path TEXT)"
             cur.execute(cmd)
 
+    def about_us(self):
+        QMessageBox.about(self.Frame, "Hakkımızda", "<html><head/><body><p align=\"center\"><span style=\" color:#c2c2c2;\"></br><br></br>Alp Doruk Şengün - 20217170015<br></br> Timur Karakaş - 20217170062</span></p></p></body></html>")
+
     def main(self):   
         #butonlar
         self.ui.play.clicked.connect(self.song.play_clicked)
@@ -38,9 +41,9 @@ class Main():
         self.ui.PlaySlider.sliderReleased.connect(self.song.sliderRelease)
         self.ui.Backward.clicked.connect(self.song.backward)
         self.ui.Forward.clicked.connect(self.song.forward)
+        self.ui.about_us.clicked.connect(self.about_us)
 
         self.timeSetter.start()
-
         self.thread.start()
 
         sys.exit(self.app.exec_())

@@ -1,3 +1,7 @@
+# Öğrenciler
+- [x] Alp Doruk Şengün - 2021717001?
+- [x] Timur Karakaş - 20217170062
+
 # Gereken eklentiler için komutlar:
 
 - [x] pip install PyQt5

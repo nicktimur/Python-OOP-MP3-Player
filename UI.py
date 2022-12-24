@@ -43,7 +43,8 @@ class Ui_Frame(object):
         self.play = QtWidgets.QPushButton(self.frame)
         self.play.setGeometry(QtCore.QRect(560, 10, 41, 41))
         font = QtGui.QFont()
-        font.setPointSize(22)
+        font.setFamily("MS UI Gothic")
+        font.setPointSize(20)
         self.play.setFont(font)
         self.play.setStyleSheet("QPushButton {\n"
 "    color: #c2c2c2;\n"
@@ -66,16 +67,25 @@ class Ui_Frame(object):
         self.play.setObjectName("play")
         self.nowPlaying = QtWidgets.QLineEdit(self.frame)
         self.nowPlaying.setGeometry(QtCore.QRect(10, 10, 291, 20))
-        self.nowPlaying.setStyleSheet("background-color:  rgb(107, 107, 107);")
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        self.nowPlaying.setFont(font)
+        self.nowPlaying.setStyleSheet("background-color:  rgb(75, 75, 75);\n"
+"color: #c2c2c2;\n"
+"border: 2px solid #313131;\n"
+"border-radius: 5px;\n"
+"border-style: outset;\n"
+"")
         self.nowPlaying.setText("")
         self.nowPlaying.setReadOnly(True)
         self.nowPlaying.setObjectName("nowPlaying")
         self.nextButton = QtWidgets.QPushButton(self.frame)
         self.nextButton.setGeometry(QtCore.QRect(620, 10, 31, 31))
         font = QtGui.QFont()
-        font.setPointSize(6)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setFamily("Franklin Gothic Demi")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setWeight(50)
         font.setStrikeOut(False)
         font.setKerning(False)
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
@@ -83,7 +93,7 @@ class Ui_Frame(object):
         self.nextButton.setStyleSheet("QPushButton {\n"
 "    color: #c2c2c2;\n"
 "    border: 2px solid #313131;\n"
-"    border-radius: 20px;\n"
+"    border-radius: 5px;\n"
 "    border-style: outset;\n"
 "    background:  rgb(50, 50, 50);\n"
 "    }\n"
@@ -101,15 +111,16 @@ class Ui_Frame(object):
         self.backButton = QtWidgets.QPushButton(self.frame)
         self.backButton.setGeometry(QtCore.QRect(510, 10, 31, 31))
         font = QtGui.QFont()
-        font.setPointSize(6)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setFamily("Franklin Gothic Demi")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setWeight(50)
         font.setKerning(False)
         self.backButton.setFont(font)
         self.backButton.setStyleSheet("QPushButton {\n"
 "    color: #c2c2c2;\n"
 "    border: 2px solid #313131;\n"
-"    border-radius: 20px;\n"
+"    border-radius: 5px;\n"
 "    border-style: outset;\n"
 "    background:  rgb(50, 50, 50);\n"
 "    }\n"
@@ -127,17 +138,18 @@ class Ui_Frame(object):
         self.Shuffle = QtWidgets.QPushButton(self.frame)
         self.Shuffle.setGeometry(QtCore.QRect(10, 40, 41, 21))
         font = QtGui.QFont()
-        font.setPointSize(6)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(7)
+        font.setBold(False)
+        font.setWeight(50)
         font.setKerning(False)
         self.Shuffle.setFont(font)
         self.Shuffle.setStyleSheet("QPushButton {\n"
-"    color: #ababab;\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 20px;\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
+"    border-radius: 5px;\n"
 "    border-style: outset;\n"
-"    background:  rgb(107, 107, 107);\n"
+"    background:  rgb(50, 50, 50);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
@@ -151,59 +163,60 @@ class Ui_Frame(object):
         self.Shuffle.setCheckable(True)
         self.Shuffle.setObjectName("Shuffle")
         self.SoundSlider = QtWidgets.QSlider(self.frame)
-        self.SoundSlider.setGeometry(QtCore.QRect(1000, 60, 160, 22))
+        self.SoundSlider.setGeometry(QtCore.QRect(1000, 50, 160, 22))
         self.SoundSlider.setStyleSheet("QSlider::groove:horizontal {\n"
 "border: 1px solid #bbb;\n"
 "background: white;\n"
-"height: 10px;\n"
-"border-radius: 4px;\n"
+"height: 4px;\n"
+"border-radius: 3px;\n"
 "}\n"
 "\n"
 "QSlider::sub-page:horizontal {\n"
-"background: rgb(50, 50, 50);\n"
+"background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,\n"
+"    stop: 0 #151515, stop: 1 #505050);\n"
 "border: 1px solid #777;\n"
 "height: 10px;\n"
-"border-radius: 4px;\n"
+"border-radius: 3px;\n"
 "}\n"
+"\n"
 "\n"
 "QSlider::add-page:horizontal {\n"
 "background: #fff;\n"
-"border: 1px solid #777;\n"
+"border: 3px solid #777;\n"
 "height: 10px;\n"
-"border-radius: 4px;\n"
+"border-radius: 2.5px;\n"
 "}\n"
 "\n"
 "QSlider::handle:horizontal {\n"
-"background-color:  rgb(0, 0, 0);\n"
-"border: 1px solid #777;\n"
-"width: 13px;\n"
-"margin-top: -2px;\n"
-"margin-bottom: -2px;\n"
-"border-radius: 4px;\n"
+"background-color: rgb(50, 50, 50);\n"
+"border: 1px solid #313131;;\n"
+"width: 17px;\n"
+"height: 30px;\n"
+"margin-top: -7px;\n"
+"margin-bottom: -7px;\n"
+"border-radius: 9px;\n"
+"border-style: outset;\n"
 "}\n"
 "\n"
 "QSlider::handle:horizontal:hover {\n"
-"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
-"    stop:0 #fff, stop:1 #ddd);\n"
-"border: 1px solid #444;\n"
-"border-radius: 4px;\n"
+"background-color: rgb(30, 30, 30);\n"
+"border: 1px solid #2a2a2a;\n"
+"width: 17px;\n"
+"height: 30px;\n"
+"margin-top: -7px;\n"
+"margin-bottom: -7px;\n"
+"border-radius: 9px;\n"
+"border-style: outset;\n"
+"\n"
 "}\n"
 "\n"
-"QSlider::sub-page:horizontal:disabled {\n"
-"background: #bbb;\n"
-"border-color: #999;\n"
+"QSlider::handle:horizontal:pressed{\n"
+"    border-style: inset;\n"
+"    background: rgb(15, 15, 15);\n"
 "}\n"
 "\n"
-"QSlider::add-page:horizontal:disabled {\n"
-"background: #eee;\n"
-"border-color: #999;\n"
-"}\n"
 "\n"
-"QSlider::handle:horizontal:disabled {\n"
-"background: #eee;\n"
-"border: 1px solid #aaa;\n"
-"border-radius: 4px;\n"
-"}")
+"")
         self.SoundSlider.setMaximum(100)
         self.SoundSlider.setSingleStep(1)
         self.SoundSlider.setPageStep(10)
@@ -213,13 +226,16 @@ class Ui_Frame(object):
         self.SoundSlider.setOrientation(QtCore.Qt.Horizontal)
         self.SoundSlider.setObjectName("SoundSlider")
         self.label = QtWidgets.QLabel(self.frame)
-        self.label.setGeometry(QtCore.QRect(1050, 40, 71, 16))
+        self.label.setGeometry(QtCore.QRect(1040, 30, 71, 16))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        self.label.setFont(font)
         self.label.setStyleSheet("QLabel {\n"
-"    color: #333;\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 20px;\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
+"    border-radius: 5px;\n"
 "    border-style: outset;\n"
-"    background: rgb(107, 107, 107);\n"
+"    background:  rgb(50, 50, 50);\n"
 "    }\n"
 "")
         self.label.setObjectName("label")
@@ -231,33 +247,51 @@ class Ui_Frame(object):
 "border: 1px solid #bbb;\n"
 "background: white;\n"
 "height: 4px;\n"
-"border-radius: 4px;\n"
+"border-radius: 3px;\n"
 "}\n"
 "\n"
 "QSlider::sub-page:horizontal {\n"
 "background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,\n"
 "    stop: 0 #151515, stop: 1 #505050);\n"
-"\n"
 "border: 1px solid #777;\n"
 "height: 10px;\n"
-"border-radius: 4px;\n"
+"border-radius: 3px;\n"
 "}\n"
+"\n"
 "\n"
 "QSlider::add-page:horizontal {\n"
 "background: #fff;\n"
-"border: 1px solid #777;\n"
+"border: 3px solid #777;\n"
 "height: 10px;\n"
-"border-radius: 8px;\n"
+"border-radius: 2.5px;\n"
 "}\n"
 "\n"
 "QSlider::handle:horizontal {\n"
-"background-color: rgb(0, 0, 0);\n"
-"border: 1px solid #777;\n"
+"background-color: rgb(50, 50, 50);\n"
+"border: 1px solid #313131;;\n"
 "width: 17px;\n"
 "height: 30px;\n"
 "margin-top: -7px;\n"
 "margin-bottom: -7px;\n"
 "border-radius: 9px;\n"
+"border-style: outset;\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal:hover {\n"
+"background-color: rgb(30, 30, 30);\n"
+"border: 1px solid #2a2a2a;\n"
+"width: 17px;\n"
+"height: 30px;\n"
+"margin-top: -7px;\n"
+"margin-bottom: -7px;\n"
+"border-radius: 9px;\n"
+"border-style: outset;\n"
+"\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal:pressed{\n"
+"    border-style: inset;\n"
+"    background: rgb(15, 15, 15);\n"
 "}\n"
 "\n"
 "\n"
@@ -275,11 +309,16 @@ class Ui_Frame(object):
         self.PlaySlider.setObjectName("PlaySlider")
         self.time = QtWidgets.QLabel(self.frame)
         self.time.setGeometry(QtCore.QRect(306, 60, 31, 21))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(9)
+        self.time.setFont(font)
         self.time.setStyleSheet("")
         self.time.setObjectName("time")
         self.Backward = QtWidgets.QPushButton(self.frame)
         self.Backward.setGeometry(QtCore.QRect(470, 10, 31, 21))
         font = QtGui.QFont()
+        font.setFamily("Georgia")
         font.setPointSize(14)
         font.setBold(False)
         font.setWeight(50)
@@ -288,7 +327,7 @@ class Ui_Frame(object):
         self.Backward.setStyleSheet("QPushButton {\n"
 "    color: #c2c2c2;\n"
 "    border: 2px solid #313131;\n"
-"    border-radius: 20px;\n"
+"    border-radius: 5px;\n"
 "    border-style: outset;\n"
 "    background:  rgb(50, 50, 50);\n"
 "    }\n"
@@ -306,6 +345,7 @@ class Ui_Frame(object):
         self.Forward = QtWidgets.QPushButton(self.frame)
         self.Forward.setGeometry(QtCore.QRect(660, 10, 31, 21))
         font = QtGui.QFont()
+        font.setFamily("Georgia")
         font.setPointSize(14)
         font.setBold(False)
         font.setWeight(50)
@@ -314,7 +354,7 @@ class Ui_Frame(object):
         self.Forward.setStyleSheet("QPushButton {\n"
 "    color: #c2c2c2;\n"
 "    border: 2px solid #313131;\n"
-"    border-radius: 20px;\n"
+"    border-radius: 5px;\n"
 "    border-style: outset;\n"
 "    background:  rgb(50, 50, 50);\n"
 "    }\n"
@@ -331,22 +371,29 @@ class Ui_Frame(object):
         self.Forward.setObjectName("Forward")
         self.fullTime = QtWidgets.QLabel(self.frame)
         self.fullTime.setGeometry(QtCore.QRect(820, 60, 31, 21))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(9)
+        self.fullTime.setFont(font)
         self.fullTime.setStyleSheet("")
         self.fullTime.setObjectName("fullTime")
         self.songs_list = QtWidgets.QTableWidget(Frame)
         self.songs_list.setGeometry(QtCore.QRect(200, 0, 781, 571))
         self.songs_list.setMinimumSize(QtCore.QSize(781, 0))
         self.songs_list.setStyleSheet("QWidget {\n"
-"    background-color: #333333;\n"
-"    color: #b9b9b9;\n"
+"    background-color: #313131;\n"
+"    color: #c2c2c2;\n"
+"    border-radius: 3px;\n"
 "}\n"
 "QTableView {\n"
-"    selection-background-color:  rgb(136, 136, 136);\n"
+"    selection-background-color:  rgb(75, 75, 75);\n"
+"    color: #c2c2c2;\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
 "    background-color: #646464;\n"
-"    border: 1px solid #272727;\n"
+"    border: 1px solid #181818;\n"
+"    border-radius: 1px;\n"
 "    font-size: 12pt;\n"
 "}\n"
 "\n"
@@ -358,6 +405,7 @@ class Ui_Frame(object):
 "QTableWidget QTableCornerButton::section {\n"
 "    background-color: #646464;\n"
 "    border: 1px solid #272727;\n"
+"    border-radius: 2px;\n"
 "}")
         self.songs_list.setLineWidth(1)
         self.songs_list.setMidLineWidth(1)
@@ -369,17 +417,58 @@ class Ui_Frame(object):
         item = QtWidgets.QTableWidgetItem()
         item.setTextAlignment(QtCore.Qt.AlignCenter)
         font = QtGui.QFont()
-        font.setFamily("Sans Serif Collection")
+        font.setFamily("Yu Gothic UI")
         font.setPointSize(8)
         font.setUnderline(False)
         item.setFont(font)
         self.songs_list.setHorizontalHeaderItem(0, item)
         self.songs_list.horizontalHeader().setDefaultSectionSize(780)
         self.find_path = QtWidgets.QPushButton(Frame)
-        self.find_path.setGeometry(QtCore.QRect(60, 510, 75, 23))
-        self.find_path.setStyleSheet("\n"
-"background-color: rgb(107, 107, 107);")
+        self.find_path.setGeometry(QtCore.QRect(60, 530, 75, 23))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        self.find_path.setFont(font)
+        self.find_path.setStyleSheet("QPushButton {\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background:  rgb(50, 50, 50);\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: rgb(15, 15, 15);\n"
+"    }")
         self.find_path.setObjectName("find_path")
+        self.about_us = QtWidgets.QPushButton(Frame)
+        self.about_us.setGeometry(QtCore.QRect(1060, 530, 75, 23))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        self.about_us.setFont(font)
+        self.about_us.setStyleSheet("QPushButton {\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background:  rgb(50, 50, 50);\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: rgb(15, 15, 15);\n"
+"    }")
+        self.about_us.setObjectName("about_us")
 
         self.retranslateUi(Frame)
         QtCore.QMetaObject.connectSlotsByName(Frame)
@@ -398,6 +487,7 @@ class Ui_Frame(object):
         item = self.songs_list.horizontalHeaderItem(0)
         item.setText(_translate("Frame", "Şarkı İsmi"))
         self.find_path.setText(_translate("Frame", "Şarkıları Ekle"))
+        self.about_us.setText(_translate("Frame", "Hakkımızda"))
 
 
 if __name__ == "__main__":

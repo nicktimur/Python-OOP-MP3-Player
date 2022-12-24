@@ -29,7 +29,6 @@ class Songs:
     def AddMusicWithDb(self):
         try:
             with sqlite3.connect(self.DB_DIR) as db:
-                print(self.DB_DIR)
                 cur = db.cursor()
                 cmd = "SELECT path FROM path"
                 cur.execute(cmd)
@@ -246,11 +245,11 @@ class Songs:
             temp = divmod(int(sec), 60)
             min = temp[0]
             sec = temp[1]
-            self.ui.time.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#dadada;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
+            self.ui.time.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#c2c2c2;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
             temp = divmod(int(remaining), 60) #Kalan sürenin hesabı
             min = temp[0]#Kalan sürenin dakikası
             sec = temp[1]#Kalan sürenin saniyesi
-            self.ui.fullTime.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#dadada;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
+            self.ui.fullTime.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#c2c2c2;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
         else:
             pass
 
@@ -262,6 +261,11 @@ class Songs:
 
     def backward(self):
         pos = self.ui.PlaySlider.value()
-        self.ui.PlaySlider.setSliderPosition(pos - 10) #Slider pozisyonunu 10 saniye geri alıyorum
-        self.diff -= 10 #Gerçek çalma zamanıyla aradaki fark 10 saniye kapandı
-        pygame.mixer.music.set_pos(pos - 10) #Şarkı 10 saniye geri alındı
+        if (pos - 10 >= 0):
+            self.ui.PlaySlider.setSliderPosition(pos - 10) #Slider pozisyonunu 10 saniye geri alıyorum
+            self.diff -= 10 #Gerçek çalma zamanıyla aradaki fark 10 saniye kapandı
+            pygame.mixer.music.set_pos(pos - 10) #Şarkı 10 saniye geri alındı
+        else:
+            self.ui.PlaySlider.setSliderPosition(0) #Slider pozisyonunu 0 yapıyorum
+            self.diff -= pos #Gerçek çalma zamanıyla aradaki fark pos kadar saniye kapandı
+            pygame.mixer.music.set_pos(0) #Şarkı başa alındı.
