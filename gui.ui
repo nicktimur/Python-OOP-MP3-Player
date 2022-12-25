@@ -48,8 +48,8 @@
    <string notr="true">selection-color: rgb(0, 0, 0);
 gridline-color: rgb(0, 0, 0);
 border-color: rgb(80, 80, 80);
-background-color: rgb(136, 136, 136);
-background-color: rgb(24, 24, 24);</string>
+background-color: rgb(24, 24, 24);
+</string>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">

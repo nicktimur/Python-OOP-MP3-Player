@@ -22,6 +22,8 @@ class theme_changer:
                 self.BlackBull()
             case "default":
                 self.Default()
+            case "Indian Rush":
+                self.Indian_Rush()
 
     def BlackBull(self):
         # Veri tabanına son kullanılan temayı ekleme
@@ -1065,3 +1067,457 @@ class theme_changer:
         self.ui.find_path.setText(_translate("Frame", "Şarkıları Ekle"))
         self.ui.about_us.setText(_translate("Frame", "Hakkımızda"))
         self.ui.BlackBull.setText(_translate("Frame", "BlackBull"))
+
+    def Indian_Rush(self):
+        # Veri tabanına son kullanılan temayı ekleme
+        self.theme = "Indian Rush"
+        with sqlite3.connect(self.DB_DIR) as db:
+                cur = db.cursor()
+                cmd = "DELETE FROM theme"
+                cur.execute(cmd)
+                cmd = "INSERT INTO theme VALUES ('{}')".format(self.theme)
+                cur.execute(cmd)
+
+        # Frame'in ayarlanması
+        self.Frame.setStyleSheet("selection-color: rgb(0, 0, 0);\n"
+"background-color: qradialgradient(spread:repeat, cx:0.5, cy:0.5, radius:0.077, fx:0.5, fy:0.5, stop:0 rgba(0, 169, 255, 147), stop:0.497326 rgba(0, 0, 0, 147), stop:1 rgba(0, 169, 255, 147));\n"
+"gridline-color: rgb(0, 0, 0);\n"
+"border-color: rgb(80, 80, 80);\n"
+"")
+        self.ui.frame.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));")
+
+        # Play tuşunun ayarlanması
+        font = QtGui.QFont()
+        font.setFamily("MS UI Gothic")
+        font.setPointSize(20)
+        self.ui.play.setFont(font)
+        self.ui.play.setStyleSheet("QPushButton {\n"
+"    color: #333;\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 20px;\n"
+"    border-style: outset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
+"        );\n"
+"    }")
+
+        # Now Playing kısmının ayarlanması
+        self.ui.nowPlaying.setStyleSheet("background-color: rgb(157, 157, 157);")
+
+        # İleri Tuşunun ayarlanması
+        font = QtGui.QFont()
+        font.setFamily("Franklin Gothic Demi")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setStrikeOut(False)
+        font.setKerning(False)
+        font.setStyleStrategy(QtGui.QFont.PreferDefault)
+        self.ui.nextButton.setFont(font)
+        self.ui.nextButton.setStyleSheet("QPushButton {\n"
+"    color: #333;\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 20px;\n"
+"    border-style: outset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
+"        );\n"
+"    }")
+
+        # Geri tuşunun ayarlanması
+        font = QtGui.QFont()
+        font.setFamily("Franklin Gothic Demi")
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setKerning(False)
+        self.ui.backButton.setFont(font)
+        self.ui.backButton.setStyleSheet("QPushButton {\n"
+"    color: #333;\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 20px;\n"
+"    border-style: outset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
+"        );\n"
+"    }")
+
+        # Shuffle tuşunun ayarlanması
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(7)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setKerning(False)
+        self.ui.Shuffle.setFont(font)
+        self.ui.Shuffle.setStyleSheet("QPushButton {\n"
+"    color: #333;\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 20px;\n"
+"    border-style: outset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:checked {\n"
+"    border-style: inset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
+"        );\n"
+"    }")
+
+        # Ses seviyesi slider'ının ayarlanması
+        self.ui.SoundSlider.setStyleSheet("QSlider::groove:horizontal {\n"
+"border: 1px solid #bbb;\n"
+"background: white;\n"
+"height: 10px;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::sub-page:horizontal {\n"
+"background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,\n"
+"    stop: 0 #005f00, stop: 1 #66ff00);\n"
+"\n"
+"border: 1px solid #777;\n"
+"height: 10px;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::add-page:horizontal {\n"
+"background: #fff;\n"
+"border: 1px solid #777;\n"
+"height: 10px;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal {\n"
+"background-color: rgb(11, 144, 27);\n"
+"border: 1px solid #777;\n"
+"width: 13px;\n"
+"margin-top: -2px;\n"
+"margin-bottom: -2px;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal:hover {\n"
+"background: qlineargradient(x1:0, y1:0, x2:1, y2:1,\n"
+"    stop:0 #fff, stop:1 #ddd);\n"
+"border: 1px solid #444;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::sub-page:horizontal:disabled {\n"
+"background: #bbb;\n"
+"border-color: #999;\n"
+"}\n"
+"\n"
+"QSlider::add-page:horizontal:disabled {\n"
+"background: #eee;\n"
+"border-color: #999;\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal:disabled {\n"
+"background: #eee;\n"
+"border: 1px solid #aaa;\n"
+"border-radius: 4px;\n"
+"}")
+
+        # Ses seviyesi label'ının ayarlanması
+        self.ui.label.setStyleSheet("QLabel {\n"
+"    color: #333;\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 20px;\n"
+"    border-style: outset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
+"        );\n"
+"    }\n"
+"")
+
+        # Çalma slider'ının ayarlanması
+        self.ui.PlaySlider.setMouseTracking(False)
+        self.ui.PlaySlider.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.ui.PlaySlider.setStyleSheet("QSlider::groove:horizontal {\n"
+"border: 1px solid #bbb;\n"
+"background: white;\n"
+"height: 5px;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::sub-page:horizontal {\n"
+"background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,\n"
+"    stop: 0 #151515, stop: 1 #505050);\n"
+"\n"
+"border: 1px solid #777;\n"
+"height: 10px;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QSlider::add-page:horizontal {\n"
+"background: #fff;\n"
+"border: 1px solid #777;\n"
+"height: 10px;\n"
+"border-radius: 8px;\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal {\n"
+"background-color: rgb(0, 0, 0);\n"
+"border: 1px solid #777;\n"
+"width: 17px;\n"
+"height: 30px;\n"
+"margin-top: -7px;\n"
+"margin-bottom: -7px;\n"
+"border-radius: 9px;\n"
+"}\n"
+"\n"
+"\n"
+"")
+
+        # İleri al tuşunun ayarlanması
+        font = QtGui.QFont()
+        font.setFamily("Georgia")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setKerning(False)
+        self.ui.Forward.setFont(font)
+        self.ui.Forward.setStyleSheet("QPushButton {\n"
+"    color: #333;\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 20px;\n"
+"    border-style: outset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
+"        );\n"
+"    }")
+
+
+        # Geri al tuşunun ayarlanması
+        font = QtGui.QFont()
+        font.setFamily("Georgia")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setWeight(50)
+        font.setKerning(False)
+        self.ui.Backward.setFont(font)
+        self.ui.Backward.setStyleSheet("QPushButton {\n"
+"    color: #333;\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 20px;\n"
+"    border-style: outset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
+"        );\n"
+"    }")
+
+
+        # Zaman göstergesinin ayarlanması
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(9)
+        self.ui.fullTime.setFont(font)
+        self.ui.fullTime.setStyleSheet("background-color: rgb(255, 255, 255);")
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(9)
+        self.ui.time.setFont(font)
+        self.ui.time.setStyleSheet("background-color: rgb(255, 255, 255);")
+        
+
+        # Şarkı listesi'nin ayarlanması
+        self.ui.songs_list.setMinimumSize(QtCore.QSize(781, 0))
+        self.ui.songs_list.setStyleSheet("\n"
+"background-color: rgb(125, 125, 125);")
+        self.ui.songs_list.setLineWidth(1)
+        self.ui.songs_list.setMidLineWidth(1)
+        item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(QtCore.Qt.AlignCenter)
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(8)
+        font.setUnderline(False)
+        item.setFont(font)
+        self.ui.songs_list.setHorizontalHeaderItem(0, item)
+        if self.song.isAdded:  
+            self.ui.songs_list.horizontalHeader().setDefaultSectionSize(730)
+        else:
+            self.ui.songs_list.horizontalHeader().setDefaultSectionSize(780)
+
+        # Şarkıları ekle tuşunun ayarlanması
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.ui.find_path.setFont(font)
+        self.ui.find_path.setStyleSheet("QPushButton {\n"
+"font-weight: bold;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));\n"
+"border-style: solid;\n"
+"border-radius:7px;\n"
+"}")
+
+        # Hakkımızda tuşunun ayarlanması
+        self.ui.about_us.setFont(font)
+        self.ui.about_us.setStyleSheet("QPushButton {\n"
+"\n"
+"font-weight: bold;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));\n"
+"border-style: solid;\n"
+"border-radius:7px;\n"
+"}")
+
+        # Tema tuşunun ayarlanması
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.ui.BlackBull.setFont(font)
+        self.ui.BlackBull.setStyleSheet("QPushButton {\n"
+"font-weight: bold;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));\n"
+"border-style: solid;\n"
+"border-radius:12px;\n"
+"}")
+
+        #Temalar label'ının ayarlanması
+        self.themes = QtWidgets.QLabel(self.Frame)
+        self.themes.setStyleSheet("color:#c2c2c2;")
+        self.themes.setObjectName("themes")
+
+        # Default tema tuşunun ayarlanması
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.ui.Default.setFont(font)
+        self.ui.Default.setStyleSheet("QPushButton {\n"
+"font-weight: bold;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));\n"
+"border-style: solid;\n"
+"border-radius:12px;\n"
+"}")
+
+        # HİNTLİ TELAŞININ AYARLANMASI
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.ui.Indian_Rush.setFont(font)
+        self.ui.Indian_Rush.setStyleSheet("QPushButton {\n"
+"font-weight: bold;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));\n"
+"border-style: solid;\n"
+"border-radius:12px;\n"
+"}")
+
+        # İsim değişiklikleri'nin yapılması
+        _translate = QtCore.QCoreApplication.translate
+        self.Frame.setWindowTitle(_translate("Frame", "Mp3 Oynatıcı"))
+        self.ui.nextButton.setText(_translate("Frame", ">>|"))
+        self.ui.backButton.setText(_translate("Frame", "|<<"))
+        self.ui.Shuffle.setText(_translate("Frame", "Shuffle"))
+        self.ui.label.setText(_translate("Frame", "<html><head/><body><p align=\"center\">Ses Seviyesi</p></body></html>"))
+        self.ui.time.setText(_translate("Frame", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
+        self.ui.Backward.setText(_translate("Frame", "↩"))
+        self.ui.Forward.setText(_translate("Frame", "↪"))
+        self.ui.fullTime.setText(_translate("Frame", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
+        item = self.ui.songs_list.horizontalHeaderItem(0)
+        item.setText(_translate("Frame", "Şarkı İsmi"))
+        self.ui.about_us.setText(_translate("Frame", "Hakkımızda"))
+        self.ui.BlackBull.setText(_translate("Frame", "BlackBull"))
+        self.themes.setText(_translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">Temalar</span></p></body></html>"))
+        self.ui.find_path.setText(_translate("Frame", "Şarkıları Ekle"))
+        self.ui.Default.setText(_translate("Frame", "Default"))
+        self.ui.Indian_Rush.setText(_translate("Frame", "Indian Rush"))

@@ -49,6 +49,7 @@ class Main():
         self.ui.about_us.clicked.connect(self.about_us)
         self.ui.BlackBull.clicked.connect(self.ThemeChanger.BlackBull)
         self.ui.Default.clicked.connect(self.ThemeChanger.Default)
+        self.ui.Indian_Rush.clicked.connect(self.ThemeChanger.Indian_Rush)
 
         #threadler
         self.timeSetter.start()
