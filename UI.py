@@ -29,13 +29,13 @@ class Ui_Frame(object):
         Frame.setWindowIcon(icon)
         Frame.setAutoFillBackground(False)
         Frame.setStyleSheet("selection-color: rgb(0, 0, 0);\n"
+"background-color: qradialgradient(spread:repeat, cx:0.5, cy:0.5, radius:0.077, fx:0.5, fy:0.5, stop:0 rgba(0, 169, 255, 147), stop:0.497326 rgba(0, 0, 0, 147), stop:1 rgba(0, 169, 255, 147));\n"
 "gridline-color: rgb(0, 0, 0);\n"
 "border-color: rgb(80, 80, 80);\n"
-"background-color: rgb(136, 136, 136);")
+"")
         self.frame = QtWidgets.QFrame(Frame)
         self.frame.setGeometry(QtCore.QRect(0, 570, 1221, 101))
-        self.frame.setStyleSheet("background-color: rgb(71, 71, 71);\n"
-"")
+        self.frame.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -83,7 +83,6 @@ class Ui_Frame(object):
         font = QtGui.QFont()
         font.setPointSize(6)
         font.setBold(True)
-        font.setWeight(75)
         font.setStrikeOut(False)
         font.setKerning(False)
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
@@ -120,7 +119,6 @@ class Ui_Frame(object):
         font = QtGui.QFont()
         font.setPointSize(6)
         font.setBold(True)
-        font.setWeight(75)
         font.setKerning(False)
         self.backButton.setFont(font)
         self.backButton.setStyleSheet("QPushButton {\n"
@@ -151,11 +149,10 @@ class Ui_Frame(object):
 "    }")
         self.backButton.setObjectName("backButton")
         self.Shuffle = QtWidgets.QPushButton(self.frame)
-        self.Shuffle.setGeometry(QtCore.QRect(10, 40, 41, 21))
+        self.Shuffle.setGeometry(QtCore.QRect(10, 40, 51, 21))
         font = QtGui.QFont()
         font.setPointSize(6)
         font.setBold(True)
-        font.setWeight(75)
         font.setKerning(False)
         self.Shuffle.setFont(font)
         self.Shuffle.setStyleSheet("QPushButton {\n"
@@ -186,7 +183,7 @@ class Ui_Frame(object):
         self.Shuffle.setCheckable(True)
         self.Shuffle.setObjectName("Shuffle")
         self.SoundSlider = QtWidgets.QSlider(self.frame)
-        self.SoundSlider.setGeometry(QtCore.QRect(1000, 60, 160, 22))
+        self.SoundSlider.setGeometry(QtCore.QRect(1000, 50, 160, 22))
         self.SoundSlider.setStyleSheet("QSlider::groove:horizontal {\n"
 "border: 1px solid #bbb;\n"
 "background: white;\n"
@@ -250,7 +247,7 @@ class Ui_Frame(object):
         self.SoundSlider.setOrientation(QtCore.Qt.Horizontal)
         self.SoundSlider.setObjectName("SoundSlider")
         self.label = QtWidgets.QLabel(self.frame)
-        self.label.setGeometry(QtCore.QRect(1050, 40, 71, 16))
+        self.label.setGeometry(QtCore.QRect(1030, 10, 111, 31))
         self.label.setStyleSheet("QLabel {\n"
 "    color: #333;\n"
 "    border: 2px solid #555;\n"
@@ -315,14 +312,13 @@ class Ui_Frame(object):
         self.PlaySlider.setObjectName("PlaySlider")
         self.time = QtWidgets.QLabel(self.frame)
         self.time.setGeometry(QtCore.QRect(306, 60, 31, 21))
-        self.time.setStyleSheet("")
+        self.time.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.time.setObjectName("time")
         self.Backward = QtWidgets.QPushButton(self.frame)
         self.Backward.setGeometry(QtCore.QRect(470, 10, 31, 21))
         font = QtGui.QFont()
         font.setPointSize(14)
         font.setBold(False)
-        font.setWeight(50)
         font.setKerning(False)
         self.Backward.setFont(font)
         self.Backward.setStyleSheet("QPushButton {\n"
@@ -356,7 +352,6 @@ class Ui_Frame(object):
         font = QtGui.QFont()
         font.setPointSize(14)
         font.setBold(False)
-        font.setWeight(50)
         font.setKerning(False)
         self.Forward.setFont(font)
         self.Forward.setStyleSheet("QPushButton {\n"
@@ -387,13 +382,17 @@ class Ui_Frame(object):
         self.Forward.setObjectName("Forward")
         self.fullTime = QtWidgets.QLabel(self.frame)
         self.fullTime.setGeometry(QtCore.QRect(820, 60, 31, 21))
-        self.fullTime.setStyleSheet("")
+        self.fullTime.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.fullTime.setObjectName("fullTime")
+        self.find_path = QtWidgets.QPushButton(self.frame)
+        self.find_path.setGeometry(QtCore.QRect(120, 40, 75, 23))
+        self.find_path.setStyleSheet("background-color: rgb(136, 136, 136);")
+        self.find_path.setObjectName("find_path")
         self.songs_list = QtWidgets.QTableWidget(Frame)
-        self.songs_list.setGeometry(QtCore.QRect(200, 0, 781, 571))
+        self.songs_list.setGeometry(QtCore.QRect(0, 0, 1031, 571))
         self.songs_list.setMinimumSize(QtCore.QSize(781, 0))
         self.songs_list.setStyleSheet("\n"
-"background-color: rgb(193, 193, 193);")
+"background-color: rgb(0, 0, 0);")
         self.songs_list.setLineWidth(1)
         self.songs_list.setMidLineWidth(1)
         self.songs_list.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
@@ -402,18 +401,39 @@ class Ui_Frame(object):
         self.songs_list.setColumnCount(1)
         self.songs_list.setObjectName("songs_list")
         item = QtWidgets.QTableWidgetItem()
-        item.setTextAlignment(QtCore.Qt.AlignCenter)
         font = QtGui.QFont()
         font.setFamily("Sans Serif Collection")
-        font.setPointSize(8)
-        font.setUnderline(False)
+        font.setPointSize(10)
+        font.setUnderline(True)
         item.setFont(font)
+        item.setBackground(QtGui.QColor(255, 255, 255))
+        brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        item.setForeground(brush)
         self.songs_list.setHorizontalHeaderItem(0, item)
         self.songs_list.horizontalHeader().setDefaultSectionSize(780)
-        self.find_path = QtWidgets.QPushButton(Frame)
-        self.find_path.setGeometry(QtCore.QRect(60, 510, 75, 23))
-        self.find_path.setStyleSheet("background-color: rgb(136, 136, 136);")
-        self.find_path.setObjectName("find_path")
+        self.pushButton = QtWidgets.QPushButton(Frame)
+        self.pushButton.setGeometry(QtCore.QRect(1030, -10, 191, 131))
+        self.pushButton.setStyleSheet("QPushButton {\n"
+"font: 75 10pt \"Microsoft YaHei UI\";\n"
+"font-weight: bold;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));\n"
+"border-style: solid;\n"
+"border-radius:21px;\n"
+"}")
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(Frame)
+        self.pushButton_2.setGeometry(QtCore.QRect(1070, 360, 101, 81))
+        self.pushButton_2.setStyleSheet("QPushButton {\n"
+"font: 75 10pt \"Microsoft YaHei UI\";\n"
+"font-weight: bold;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));\n"
+"border-style: solid;\n"
+"border-radius:21px;\n"
+"}")
+        self.pushButton_2.setObjectName("pushButton_2")
 
         self.retranslateUi(Frame)
         QtCore.QMetaObject.connectSlotsByName(Frame)
@@ -429,9 +449,11 @@ class Ui_Frame(object):
         self.Backward.setText(_translate("Frame", "↩"))
         self.Forward.setText(_translate("Frame", "↪"))
         self.fullTime.setText(_translate("Frame", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
-        item = self.songs_list.horizontalHeaderItem(0)
-        item.setText(_translate("Frame", "Şarkı İsmi"))
         self.find_path.setText(_translate("Frame", "Şarkıları Ekle"))
+        item = self.songs_list.horizontalHeaderItem(0)
+        item.setText(_translate("Frame", "Şarkı Listesi"))
+        self.pushButton.setText(_translate("Frame", "Tema Değiştir"))
+        self.pushButton_2.setText(_translate("Frame", "Hakkımızda"))
 
 
 if __name__ == "__main__":
