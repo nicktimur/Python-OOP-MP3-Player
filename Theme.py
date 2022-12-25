@@ -887,7 +887,7 @@ class theme_changer:
         if self.song.isAdded:  
             self.ui.songs_list.horizontalHeader().setDefaultSectionSize(730)
         else:
-            self.songs_list.horizontalHeader().setDefaultSectionSize(780)
+            self.ui.songs_list.horizontalHeader().setDefaultSectionSize(780)
 
         # Şarkıları ekle tuşunun ayarlanması
         font = QtGui.QFont()
