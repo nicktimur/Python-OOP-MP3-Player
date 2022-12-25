@@ -386,12 +386,12 @@ class Ui_Frame(object):
 "    border-radius: 3px;\n"
 "}\n"
 "QTableView {\n"
-"    selection-background-color:  rgb(75, 75, 75);\n"
+"    selection-background-color: #9c9c9c;\n"
 "    color: #c2c2c2;\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
-"    background-color: #646464;\n"
+"    background-color: rgb(100, 100, 100);\n"
 "    border: 1px solid #181818;\n"
 "    border-radius: 1px;\n"
 "    font-size: 12pt;\n"
@@ -423,31 +423,8 @@ class Ui_Frame(object):
         item.setFont(font)
         self.songs_list.setHorizontalHeaderItem(0, item)
         self.songs_list.horizontalHeader().setDefaultSectionSize(780)
-        self.find_path = QtWidgets.QPushButton(Frame)
-        self.find_path.setGeometry(QtCore.QRect(60, 530, 75, 23))
-        font = QtGui.QFont()
-        font.setFamily("Yu Gothic UI")
-        self.find_path.setFont(font)
-        self.find_path.setStyleSheet("QPushButton {\n"
-"    color: #c2c2c2;\n"
-"    border: 2px solid #313131;\n"
-"    border-radius: 5px;\n"
-"    border-style: outset;\n"
-"    background:  rgb(50, 50, 50);\n"
-"    }\n"
-"\n"
-"QPushButton:hover {\n"
-"    background:  rgb(30, 30, 30);\n"
-"    border: 2px solid #2a2a2a;\n"
-"    }\n"
-"\n"
-"QPushButton:pressed {\n"
-"    border-style: inset;\n"
-"    background: rgb(15, 15, 15);\n"
-"    }")
-        self.find_path.setObjectName("find_path")
         self.about_us = QtWidgets.QPushButton(Frame)
-        self.about_us.setGeometry(QtCore.QRect(1060, 530, 75, 23))
+        self.about_us.setGeometry(QtCore.QRect(120, 540, 75, 23))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI")
         self.about_us.setFont(font)
@@ -469,6 +446,105 @@ class Ui_Frame(object):
 "    background: rgb(15, 15, 15);\n"
 "    }")
         self.about_us.setObjectName("about_us")
+        self.BlackBull = QtWidgets.QPushButton(Frame)
+        self.BlackBull.setGeometry(QtCore.QRect(990, 90, 221, 41))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(20)
+        self.BlackBull.setFont(font)
+        self.BlackBull.setStyleSheet("QPushButton {\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background:  rgb(50, 50, 50);\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: rgb(15, 15, 15);\n"
+"    }")
+        self.BlackBull.setObjectName("BlackBull")
+        self.themes = QtWidgets.QLabel(Frame)
+        self.themes.setGeometry(QtCore.QRect(990, 20, 211, 61))
+        self.themes.setStyleSheet("color:#c2c2c2;")
+        self.themes.setObjectName("themes")
+        self.find_path = QtWidgets.QPushButton(Frame)
+        self.find_path.setGeometry(QtCore.QRect(10, 540, 75, 23))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        self.find_path.setFont(font)
+        self.find_path.setStyleSheet("QPushButton {\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background:  rgb(50, 50, 50);\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: rgb(15, 15, 15);\n"
+"    }")
+        self.find_path.setObjectName("find_path")
+        self.Default = QtWidgets.QPushButton(Frame)
+        self.Default.setGeometry(QtCore.QRect(990, 150, 221, 41))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(20)
+        self.Default.setFont(font)
+        self.Default.setStyleSheet("QPushButton {\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background:  rgb(50, 50, 50);\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: rgb(15, 15, 15);\n"
+"    }")
+        self.Default.setObjectName("Default")
+        self.Indian_Rush = QtWidgets.QPushButton(Frame)
+        self.Indian_Rush.setGeometry(QtCore.QRect(990, 210, 221, 41))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(20)
+        self.Indian_Rush.setFont(font)
+        self.Indian_Rush.setStyleSheet("QPushButton {\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background:  rgb(50, 50, 50);\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: rgb(15, 15, 15);\n"
+"    }")
+        self.Indian_Rush.setObjectName("Indian_Rush")
 
         self.retranslateUi(Frame)
         QtCore.QMetaObject.connectSlotsByName(Frame)
@@ -486,8 +562,12 @@ class Ui_Frame(object):
         self.fullTime.setText(_translate("Frame", "<html><head/><body><p align=\"center\"><br/></p></body></html>"))
         item = self.songs_list.horizontalHeaderItem(0)
         item.setText(_translate("Frame", "Şarkı İsmi"))
-        self.find_path.setText(_translate("Frame", "Şarkıları Ekle"))
         self.about_us.setText(_translate("Frame", "Hakkımızda"))
+        self.BlackBull.setText(_translate("Frame", "BlackBull"))
+        self.themes.setText(_translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">Temalar</span></p></body></html>"))
+        self.find_path.setText(_translate("Frame", "Şarkıları Ekle"))
+        self.Default.setText(_translate("Frame", "Default"))
+        self.Indian_Rush.setText(_translate("Frame", "Indian Rush"))
 
 
 if __name__ == "__main__":

@@ -628,12 +628,12 @@ QPushButton:pressed {
 	border-radius: 3px;
 }
 QTableView {
-    selection-background-color:  rgb(75, 75, 75);
+    selection-background-color: #9c9c9c;
 	color: #c2c2c2;
 }
 
 QHeaderView::section {
-    background-color: #646464;
+    background-color: rgb(100, 100, 100);
     border: 1px solid #181818;
 	border-radius: 1px;
     font-size: 12pt;
@@ -687,11 +687,102 @@ QTableWidget QTableCornerButton::section {
     </property>
    </column>
   </widget>
+  <widget class="QPushButton" name="about_us">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>540</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: #c2c2c2;
+    border: 2px solid #313131;
+    border-radius: 5px;
+    border-style: outset;
+    background:  rgb(50, 50, 50);
+    }
+
+QPushButton:hover {
+    background:  rgb(30, 30, 30);
+	border: 2px solid #2a2a2a;
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: rgb(15, 15, 15);
+    }</string>
+   </property>
+   <property name="text">
+    <string>Hakkımızda</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="BlackBull">
+   <property name="geometry">
+    <rect>
+     <x>990</x>
+     <y>90</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: #c2c2c2;
+    border: 2px solid #313131;
+    border-radius: 5px;
+    border-style: outset;
+    background:  rgb(50, 50, 50);
+    }
+
+QPushButton:hover {
+    background:  rgb(30, 30, 30);
+	border: 2px solid #2a2a2a;
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: rgb(15, 15, 15);
+    }</string>
+   </property>
+   <property name="text">
+    <string>BlackBull</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="themes">
+   <property name="geometry">
+    <rect>
+     <x>990</x>
+     <y>20</y>
+     <width>211</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:#c2c2c2;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;Temalar&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
   <widget class="QPushButton" name="find_path">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>530</y>
+     <x>10</x>
+     <y>540</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -724,18 +815,19 @@ QPushButton:pressed {
     <string>Şarkıları Ekle</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="about_us">
+  <widget class="QPushButton" name="Default">
    <property name="geometry">
     <rect>
-     <x>1060</x>
-     <y>530</y>
-     <width>75</width>
-     <height>23</height>
+     <x>990</x>
+     <y>150</y>
+     <width>221</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Yu Gothic UI</family>
+     <pointsize>20</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -758,7 +850,45 @@ QPushButton:pressed {
     }</string>
    </property>
    <property name="text">
-    <string>Hakkımızda</string>
+    <string>Default</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Indian_Rush">
+   <property name="geometry">
+    <rect>
+     <x>990</x>
+     <y>210</y>
+     <width>221</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Yu Gothic UI</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: #c2c2c2;
+    border: 2px solid #313131;
+    border-radius: 5px;
+    border-style: outset;
+    background:  rgb(50, 50, 50);
+    }
+
+QPushButton:hover {
+    background:  rgb(30, 30, 30);
+	border: 2px solid #2a2a2a;
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: rgb(15, 15, 15);
+    }</string>
+   </property>
+   <property name="text">
+    <string>Indian Rush</string>
    </property>
   </widget>
  </widget>

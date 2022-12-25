@@ -11,7 +11,7 @@ import sqlite3
 
 class Songs:
     
-    def __init__(self,ui):
+    def __init__(self,ui, DB_DIR):
         pygame.init()
         self.songList = []
         self.shuffled_list = []
@@ -23,7 +23,8 @@ class Songs:
         self.path = ""
         self.SONG_END = pygame.USEREVENT+1
         self.diff = 0
-        self.DB_DIR = os.path.join(os.getcwd() + "/path.db")
+        self.isAdded = False
+        self.DB_DIR = DB_DIR
         self.AddMusicWithDb()
 
     def AddMusicWithDb(self):
@@ -32,7 +33,7 @@ class Songs:
                 cur = db.cursor()
                 cmd = "SELECT path FROM path"
                 cur.execute(cmd)
-            self.path = cur.fetchone()[0]
+                self.path = cur.fetchone()[0]
             self.ui.play.setText("▶")
             self.ui.songs_list.setRowCount(0)
             os.chdir(self.path)
@@ -43,6 +44,7 @@ class Songs:
             del temp
             self.AddtoTable(self.songs)
             self.playingRow = 0
+            self.isAdded = True
         except:
             pass
 
@@ -93,9 +95,10 @@ class Songs:
 
     def AddtoTable(self, songsList):
         self.ui.songs_list.setRowCount(len(songsList))
-        self.ui.songs_list.horizontalHeader().resizeSection(0, 730)
+        self.ui.songs_list.horizontalHeader().resizeSection(0, 736)
         for i in range(len(songsList)):
                 self.ui.songs_list.setItem(i,0,QTableWidgetItem(songsList[i]))
+        self.isAdded = True
 
     def AddMusic(self):
         del self.songs

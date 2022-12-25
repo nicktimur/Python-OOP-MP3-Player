@@ -6,17 +6,10 @@
 
 - [x] pip install PyQt5
 - [x] pip install pygame
+- [x] yükleme için requirements.txt kullanılabilir.
 
 
 - <b>Hatırladıklarım bunlar başka fark edersek ekleriz.</b>
-
-
-
-
-
-# Eklemeyi düşündüğüm fikirler:
-
-- [ ] Şimdilik fikir yok
 
 
 
@@ -25,10 +18,9 @@
 - [x] UI Class
 - [x] İki tane Qthread alt sınıfı
 - [x] Main sınıfı
+- [x] Theme_Changer sınıfı
 
 
 
 # Eklenecekler:
 - [ ] Şu anda eklenecek fikir yok
-
-- <b>Aklıma geldikçe güncellerim olabildiğince çok class olmalı tabi arayüz classları haricinde</b>
