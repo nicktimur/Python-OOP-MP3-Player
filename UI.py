@@ -28,15 +28,23 @@ class Ui_Frame(object):
         icon.addPixmap(QtGui.QPixmap("Designbolts-Free-Multimedia-Mp3-Player.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         Frame.setWindowIcon(icon)
         Frame.setAutoFillBackground(False)
-        Frame.setStyleSheet("selection-color: rgb(0, 0, 0);\n"
-"gridline-color: rgb(0, 0, 0);\n"
-"border-color: rgb(80, 80, 80);\n"
-"background-color: rgb(136, 136, 136);\n"
-"background-color: rgb(24, 24, 24);")
+        Frame.setStyleSheet("QFrame, QLabel, QToolTip {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.125 rgba(255, 255, 255, 255), stop:0.340909 rgba(255, 0, 0, 255), stop:0.528409 rgba(0, 0, 0, 255), stop:0.761364 rgba(0, 0, 0, 255), stop:0.863636 rgba(255, 255, 255, 255));\n"
+"    \n"
+"    \n"
+"    \n"
+"    \n"
+"    \n"
+"\n"
+"    \n"
+"    border: 2px solid green;\n"
+"    border-radius: 4px;\n"
+"    padding: 2px;\n"
+"    background-image: url(images/welcome.png);\n"
+"}")
         self.frame = QtWidgets.QFrame(Frame)
         self.frame.setGeometry(QtCore.QRect(0, 570, 1221, 101))
-        self.frame.setStyleSheet("background-color: rgb(33, 33, 33);\n"
-"")
+        self.frame.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.346591 rgba(255, 0, 0, 255), stop:0.568182 rgba(255, 255, 255, 255));")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -85,7 +93,6 @@ class Ui_Frame(object):
         font.setFamily("Franklin Gothic Demi")
         font.setPointSize(9)
         font.setBold(False)
-        font.setWeight(50)
         font.setStrikeOut(False)
         font.setKerning(False)
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
@@ -114,7 +121,6 @@ class Ui_Frame(object):
         font.setFamily("Franklin Gothic Demi")
         font.setPointSize(9)
         font.setBold(False)
-        font.setWeight(50)
         font.setKerning(False)
         self.backButton.setFont(font)
         self.backButton.setStyleSheet("QPushButton {\n"
@@ -141,7 +147,6 @@ class Ui_Frame(object):
         font.setFamily("Yu Gothic UI")
         font.setPointSize(7)
         font.setBold(False)
-        font.setWeight(50)
         font.setKerning(False)
         self.Shuffle.setFont(font)
         self.Shuffle.setStyleSheet("QPushButton {\n"
@@ -226,7 +231,7 @@ class Ui_Frame(object):
         self.SoundSlider.setOrientation(QtCore.Qt.Horizontal)
         self.SoundSlider.setObjectName("SoundSlider")
         self.label = QtWidgets.QLabel(self.frame)
-        self.label.setGeometry(QtCore.QRect(1040, 30, 71, 16))
+        self.label.setGeometry(QtCore.QRect(1040, 20, 81, 21))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI")
         self.label.setFont(font)
@@ -241,7 +246,7 @@ class Ui_Frame(object):
         self.label.setObjectName("label")
         self.PlaySlider = QtWidgets.QSlider(self.frame)
         self.PlaySlider.setGeometry(QtCore.QRect(350, 60, 461, 22))
-        self.PlaySlider.setMouseTracking(False)
+        self.PlaySlider.setMouseTracking(True)
         self.PlaySlider.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.PlaySlider.setStyleSheet("QSlider::groove:horizontal {\n"
 "border: 1px solid #bbb;\n"
@@ -321,7 +326,6 @@ class Ui_Frame(object):
         font.setFamily("Georgia")
         font.setPointSize(14)
         font.setBold(False)
-        font.setWeight(50)
         font.setKerning(False)
         self.Backward.setFont(font)
         self.Backward.setStyleSheet("QPushButton {\n"
@@ -348,7 +352,6 @@ class Ui_Frame(object):
         font.setFamily("Georgia")
         font.setPointSize(14)
         font.setBold(False)
-        font.setWeight(50)
         font.setKerning(False)
         self.Forward.setFont(font)
         self.Forward.setStyleSheet("QPushButton {\n"
@@ -381,7 +384,8 @@ class Ui_Frame(object):
         self.songs_list.setGeometry(QtCore.QRect(200, 0, 781, 571))
         self.songs_list.setMinimumSize(QtCore.QSize(781, 0))
         self.songs_list.setStyleSheet("QWidget {\n"
-"    background-color: #313131;\n"
+"    background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 0, 0, 255), stop:0.494318 rgba(193, 55, 55, 255), stop:1 rgba(0, 0, 0, 255));\n"
+"\n"
 "    color: #c2c2c2;\n"
 "    border-radius: 3px;\n"
 "}\n"
@@ -415,7 +419,6 @@ class Ui_Frame(object):
         self.songs_list.setColumnCount(1)
         self.songs_list.setObjectName("songs_list")
         item = QtWidgets.QTableWidgetItem()
-        item.setTextAlignment(QtCore.Qt.AlignCenter)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI")
         font.setPointSize(8)
