@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import *
 import pygame
 import random
 import sqlite3
+from Theme import theme_changer
 
 
 
@@ -248,11 +249,18 @@ class Songs:
             temp = divmod(int(sec), 60)
             min = temp[0]
             sec = temp[1]
-            self.ui.time.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#c2c2c2;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
-            temp = divmod(int(remaining), 60) #Kalan sürenin hesabı
-            min = temp[0]#Kalan sürenin dakikası
-            sec = temp[1]#Kalan sürenin saniyesi
-            self.ui.fullTime.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#c2c2c2;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
+            if theme_changer.theme == "White Chocolate":
+                self.ui.time.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#000000;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
+                temp = divmod(int(remaining), 60) #Kalan sürenin hesabı
+                min = temp[0]#Kalan sürenin dakikası
+                sec = temp[1]#Kalan sürenin saniyesi
+                self.ui.fullTime.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#000000;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
+            else:
+                self.ui.time.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#c2c2c2;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
+                temp = divmod(int(remaining), 60) #Kalan sürenin hesabı
+                min = temp[0]#Kalan sürenin dakikası
+                sec = temp[1]#Kalan sürenin saniyesi
+                self.ui.fullTime.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#c2c2c2;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
         else:
             pass
 

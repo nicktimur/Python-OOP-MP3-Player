@@ -50,6 +50,8 @@ class Main():
         self.ui.BlackBull.clicked.connect(self.ThemeChanger.BlackBull)
         self.ui.Default.clicked.connect(self.ThemeChanger.Default)
         self.ui.Indian_Rush.clicked.connect(self.ThemeChanger.Indian_Rush)
+        self.ui.White_Chocolate.clicked.connect(self.ThemeChanger.White_Chocolate)
+        self.ui.Bleeding_Rose.clicked.connect(self.ThemeChanger.Bleeding_Rose)
 
         #threadler
         self.timeSetter.start()

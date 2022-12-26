@@ -31,8 +31,8 @@ class Ui_Frame(object):
         Frame.setStyleSheet("selection-color: rgb(0, 0, 0);\n"
 "gridline-color: rgb(0, 0, 0);\n"
 "border-color: rgb(80, 80, 80);\n"
-"background-color: rgb(136, 136, 136);\n"
-"background-color: rgb(24, 24, 24);")
+"background-color: rgb(24, 24, 24);\n"
+"")
         self.frame = QtWidgets.QFrame(Frame)
         self.frame.setGeometry(QtCore.QRect(0, 570, 1221, 101))
         self.frame.setStyleSheet("background-color: rgb(33, 33, 33);\n"
@@ -545,6 +545,54 @@ class Ui_Frame(object):
 "    background: rgb(15, 15, 15);\n"
 "    }")
         self.Indian_Rush.setObjectName("Indian_Rush")
+        self.White_Chocolate = QtWidgets.QPushButton(Frame)
+        self.White_Chocolate.setGeometry(QtCore.QRect(990, 270, 221, 41))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(20)
+        self.White_Chocolate.setFont(font)
+        self.White_Chocolate.setStyleSheet("QPushButton {\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background:  rgb(50, 50, 50);\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: rgb(15, 15, 15);\n"
+"    }")
+        self.White_Chocolate.setObjectName("White_Chocolate")
+        self.Bleeding_Rose = QtWidgets.QPushButton(Frame)
+        self.Bleeding_Rose.setGeometry(QtCore.QRect(990, 330, 221, 41))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(20)
+        self.Bleeding_Rose.setFont(font)
+        self.Bleeding_Rose.setStyleSheet("QPushButton {\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background:  rgb(50, 50, 50);\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: rgb(15, 15, 15);\n"
+"    }")
+        self.Bleeding_Rose.setObjectName("Bleeding_Rose")
 
         self.retranslateUi(Frame)
         QtCore.QMetaObject.connectSlotsByName(Frame)
@@ -568,6 +616,8 @@ class Ui_Frame(object):
         self.find_path.setText(_translate("Frame", "Şarkıları Ekle"))
         self.Default.setText(_translate("Frame", "Default"))
         self.Indian_Rush.setText(_translate("Frame", "Indian Rush"))
+        self.White_Chocolate.setText(_translate("Frame", "White Chocolate"))
+        self.Bleeding_Rose.setText(_translate("Frame", "Bleeding Rose"))
 
 
 if __name__ == "__main__":
