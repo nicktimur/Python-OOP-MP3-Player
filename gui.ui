@@ -95,11 +95,13 @@
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    color: #c2c2c2;
+    
+	color: rgb(255, 0, 0);
     border: 2px solid #313131;
     border-radius: 20px;
     border-style: outset;
-    background:  rgb(50, 50, 50);
+    
+	background-color: rgb(255, 255, 255);
     }
 
 QPushButton:hover {
@@ -131,8 +133,8 @@ QPushButton:pressed {
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:  rgb(75, 75, 75);
-color: #c2c2c2;
+     <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(255, 0, 0);
 border: 2px solid #313131;
 border-radius: 5px;
 border-style: outset;
@@ -166,11 +168,13 @@ border-style: outset;
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    color: #c2c2c2;
+    
+	color: rgb(255, 0, 0);
     border: 2px solid #313131;
     border-radius: 5px;
     border-style: outset;
-    background:  rgb(50, 50, 50);
+    
+	background-color: rgb(255, 255, 255);
     }
 
 QPushButton:hover {
@@ -206,11 +210,13 @@ QPushButton:pressed {
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    color: #c2c2c2;
+    
+	color: rgb(255, 0, 0);
     border: 2px solid #313131;
     border-radius: 5px;
     border-style: outset;
-    background:  rgb(50, 50, 50);
+    
+	background-color: rgb(255, 255, 255);
     }
 
 QPushButton:hover {
@@ -246,11 +252,13 @@ QPushButton:pressed {
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    color: #c2c2c2;
+    
+	color: rgb(255, 0, 0);
     border: 2px solid #313131;
     border-radius: 5px;
     border-style: outset;
-    background:  rgb(50, 50, 50);
+    
+	background-color: rgb(255, 255, 255);
     }
 
 QPushButton:hover {
@@ -303,7 +311,7 @@ border-radius: 2.5px;
 }
 
 QSlider::handle:horizontal {
-background-color: rgb(50, 50, 50);
+	background-color: rgb(255, 255, 255);
 border: 1px solid #313131;;
 width: 17px;
 height: 30px;
@@ -360,7 +368,7 @@ QSlider::handle:horizontal:pressed{
      <rect>
       <x>1040</x>
       <y>20</y>
-      <width>81</width>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>
@@ -371,11 +379,13 @@ QSlider::handle:horizontal:pressed{
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel {
-    color: #c2c2c2;
+    
+	color: rgb(255, 255, 255);
     border: 2px solid #313131;
     border-radius: 5px;
     border-style: outset;
-    background:  rgb(50, 50, 50);
+    
+	background-color: rgb(255, 0, 0);
     }
 </string>
     </property>
@@ -423,7 +433,7 @@ border-radius: 2.5px;
 }
 
 QSlider::handle:horizontal {
-background-color: rgb(50, 50, 50);
+background-color: rgb(255, 255, 255);
 border: 1px solid #313131;;
 width: 17px;
 height: 30px;
@@ -525,11 +535,12 @@ QSlider::handle:horizontal:pressed{
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    color: #c2c2c2;
+    
+	color: rgb(255, 255, 255);
     border: 2px solid #313131;
     border-radius: 5px;
     border-style: outset;
-    background:  rgb(50, 50, 50);
+    background-color: rgb(208, 0, 0);
     }
 
 QPushButton:hover {
@@ -565,11 +576,14 @@ QPushButton:pressed {
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    color: #c2c2c2;
+	
+	color: rgb(255, 255, 255);
     border: 2px solid #313131;
     border-radius: 5px;
     border-style: outset;
-    background:  rgb(50, 50, 50);
+    
+	
+	background-color: rgb(208, 0, 0);
     }
 
 QPushButton:hover {
@@ -704,11 +718,13 @@ QTableWidget QTableCornerButton::section {
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
-    color: #c2c2c2;
+    
+	color: rgb(255, 255, 255);
     border: 2px solid #313131;
     border-radius: 5px;
     border-style: outset;
-    background:  rgb(50, 50, 50);
+    
+	background-color: rgb(255, 0, 0);
     }
 
 QPushButton:hover {
@@ -795,11 +811,13 @@ QPushButton:pressed {
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
-    color: #c2c2c2;
+    
+	color: rgb(255, 255, 255);
     border: 2px solid #313131;
     border-radius: 5px;
     border-style: outset;
-    background:  rgb(50, 50, 50);
+    
+	background-color: rgb(255, 0, 0);
     }
 
 QPushButton:hover {

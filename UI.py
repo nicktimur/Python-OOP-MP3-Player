@@ -55,11 +55,13 @@ class Ui_Frame(object):
         font.setPointSize(20)
         self.play.setFont(font)
         self.play.setStyleSheet("QPushButton {\n"
-"    color: #c2c2c2;\n"
+"    \n"
+"    color: rgb(255, 0, 0);\n"
 "    border: 2px solid #313131;\n"
 "    border-radius: 20px;\n"
 "    border-style: outset;\n"
-"    background:  rgb(50, 50, 50);\n"
+"    \n"
+"    background-color: rgb(255, 255, 255);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
@@ -78,8 +80,8 @@ class Ui_Frame(object):
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI")
         self.nowPlaying.setFont(font)
-        self.nowPlaying.setStyleSheet("background-color:  rgb(75, 75, 75);\n"
-"color: #c2c2c2;\n"
+        self.nowPlaying.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"color: rgb(255, 0, 0);\n"
 "border: 2px solid #313131;\n"
 "border-radius: 5px;\n"
 "border-style: outset;\n"
@@ -98,11 +100,13 @@ class Ui_Frame(object):
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.nextButton.setFont(font)
         self.nextButton.setStyleSheet("QPushButton {\n"
-"    color: #c2c2c2;\n"
+"    \n"
+"    color: rgb(255, 0, 0);\n"
 "    border: 2px solid #313131;\n"
 "    border-radius: 5px;\n"
 "    border-style: outset;\n"
-"    background:  rgb(50, 50, 50);\n"
+"    \n"
+"    background-color: rgb(255, 255, 255);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
@@ -124,11 +128,13 @@ class Ui_Frame(object):
         font.setKerning(False)
         self.backButton.setFont(font)
         self.backButton.setStyleSheet("QPushButton {\n"
-"    color: #c2c2c2;\n"
+"    \n"
+"    color: rgb(255, 0, 0);\n"
 "    border: 2px solid #313131;\n"
 "    border-radius: 5px;\n"
 "    border-style: outset;\n"
-"    background:  rgb(50, 50, 50);\n"
+"    \n"
+"    background-color: rgb(255, 255, 255);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
@@ -150,11 +156,13 @@ class Ui_Frame(object):
         font.setKerning(False)
         self.Shuffle.setFont(font)
         self.Shuffle.setStyleSheet("QPushButton {\n"
-"    color: #c2c2c2;\n"
+"    \n"
+"    color: rgb(255, 0, 0);\n"
 "    border: 2px solid #313131;\n"
 "    border-radius: 5px;\n"
 "    border-style: outset;\n"
-"    background:  rgb(50, 50, 50);\n"
+"    \n"
+"    background-color: rgb(255, 255, 255);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
@@ -193,7 +201,7 @@ class Ui_Frame(object):
 "}\n"
 "\n"
 "QSlider::handle:horizontal {\n"
-"background-color: rgb(50, 50, 50);\n"
+"    background-color: rgb(255, 255, 255);\n"
 "border: 1px solid #313131;;\n"
 "width: 17px;\n"
 "height: 30px;\n"
@@ -231,16 +239,18 @@ class Ui_Frame(object):
         self.SoundSlider.setOrientation(QtCore.Qt.Horizontal)
         self.SoundSlider.setObjectName("SoundSlider")
         self.label = QtWidgets.QLabel(self.frame)
-        self.label.setGeometry(QtCore.QRect(1040, 20, 81, 21))
+        self.label.setGeometry(QtCore.QRect(1040, 20, 91, 21))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI")
         self.label.setFont(font)
         self.label.setStyleSheet("QLabel {\n"
-"    color: #c2c2c2;\n"
+"    \n"
+"    color: rgb(255, 255, 255);\n"
 "    border: 2px solid #313131;\n"
 "    border-radius: 5px;\n"
 "    border-style: outset;\n"
-"    background:  rgb(50, 50, 50);\n"
+"    \n"
+"    background-color: rgb(255, 0, 0);\n"
 "    }\n"
 "")
         self.label.setObjectName("label")
@@ -272,7 +282,7 @@ class Ui_Frame(object):
 "}\n"
 "\n"
 "QSlider::handle:horizontal {\n"
-"background-color: rgb(50, 50, 50);\n"
+"background-color: rgb(255, 255, 255);\n"
 "border: 1px solid #313131;;\n"
 "width: 17px;\n"
 "height: 30px;\n"
@@ -329,11 +339,12 @@ class Ui_Frame(object):
         font.setKerning(False)
         self.Backward.setFont(font)
         self.Backward.setStyleSheet("QPushButton {\n"
-"    color: #c2c2c2;\n"
+"    \n"
+"    color: rgb(255, 255, 255);\n"
 "    border: 2px solid #313131;\n"
 "    border-radius: 5px;\n"
 "    border-style: outset;\n"
-"    background:  rgb(50, 50, 50);\n"
+"    background-color: rgb(208, 0, 0);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
@@ -355,11 +366,14 @@ class Ui_Frame(object):
         font.setKerning(False)
         self.Forward.setFont(font)
         self.Forward.setStyleSheet("QPushButton {\n"
-"    color: #c2c2c2;\n"
+"    \n"
+"    color: rgb(255, 255, 255);\n"
 "    border: 2px solid #313131;\n"
 "    border-radius: 5px;\n"
 "    border-style: outset;\n"
-"    background:  rgb(50, 50, 50);\n"
+"    \n"
+"    \n"
+"    background-color: rgb(208, 0, 0);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
@@ -432,11 +446,13 @@ class Ui_Frame(object):
         font.setFamily("Yu Gothic UI")
         self.about_us.setFont(font)
         self.about_us.setStyleSheet("QPushButton {\n"
-"    color: #c2c2c2;\n"
+"    \n"
+"    color: rgb(255, 255, 255);\n"
 "    border: 2px solid #313131;\n"
 "    border-radius: 5px;\n"
 "    border-style: outset;\n"
-"    background:  rgb(50, 50, 50);\n"
+"    \n"
+"    background-color: rgb(255, 0, 0);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
@@ -483,11 +499,13 @@ class Ui_Frame(object):
         font.setFamily("Yu Gothic UI")
         self.find_path.setFont(font)
         self.find_path.setStyleSheet("QPushButton {\n"
-"    color: #c2c2c2;\n"
+"    \n"
+"    color: rgb(255, 255, 255);\n"
 "    border: 2px solid #313131;\n"
 "    border-radius: 5px;\n"
 "    border-style: outset;\n"
-"    background:  rgb(50, 50, 50);\n"
+"    \n"
+"    background-color: rgb(255, 0, 0);\n"
 "    }\n"
 "\n"
 "QPushButton:hover {\n"
