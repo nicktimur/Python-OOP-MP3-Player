@@ -30,6 +30,11 @@ class theme_changer:
                 self.White_Chocolate()
             case "Bleeding Rose":
                 self.Bleeding_Rose()
+            case "Turkey Edition":
+                self.Turkey_Edition()
+
+    def Turkey_Edition(self):
+        pass
 
     def Bleeding_Rose(self):
         # Veri tabanına son kullanılan temayı ekleme
@@ -57,6 +62,30 @@ class theme_changer:
         font.setPointSize(20)
         self.ui.Bleeding_Rose.setFont(font)
         self.ui.Bleeding_Rose.setStyleSheet("QPushButton {\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #630001;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background: #820002;\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background: #720002;\n"
+"    border: 2px solid #630001;\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: #5d0003\n"
+"    }")
+
+
+        # Turkey edition ayarlanması
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(20)
+        self.ui.Turkey_Edition.setFont(font)
+        self.ui.Turkey_Edition.setStyleSheet("QPushButton {\n"
 "    color: #c2c2c2;\n"
 "    border: 2px solid #630001;\n"
 "    border-radius: 5px;\n"
@@ -620,6 +649,30 @@ class theme_changer:
 "    border-style: inset;\n"
 "    background: rgb(15, 15, 15);\n"
 "    }")
+
+        #Turkey edition tuşu ayarlanması
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(20)
+        self.ui.Turkey_Edition.setFont(font)
+        self.ui.Turkey_Edition.setStyleSheet("QPushButton {\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background:  rgb(50, 50, 50);\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: rgb(15, 15, 15);\n"
+"    }")
+
 
         # Play tuşunun ayarlanması
         font = QtGui.QFont()
@@ -1474,6 +1527,11 @@ class theme_changer:
         font.setPointSize(9)
         self.ui.fullTime.setFont(font)
         self.ui.fullTime.setStyleSheet("")
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(9)
+        self.ui.time.setFont(font)
+        self.ui.time.setStyleSheet("")
         
 
         # Şarkı listesi'nin ayarlanması
@@ -1628,6 +1686,39 @@ class theme_changer:
         font.setPointSize(20)
         self.ui.Default.setFont(font)
         self.ui.Default.setStyleSheet("QPushButton {\n"
+"    color: #333;\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #888\n"
+"        );\n"
+"    padding: 5px;\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background: qradialgradient(\n"
+"        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #bbb\n"
+"        );\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: qradialgradient(\n"
+"        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,\n"
+"        radius: 1.35, stop: 0 #fff, stop: 1 #ddd\n"
+"        );\n"
+"    }")
+
+
+        #Turkey edition tuşu ayarlanması
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(20)
+        self.ui.Turkey_Edition.setFont(font)
+        self.ui.Turkey_Edition.setStyleSheet("QPushButton {\n"
 "    color: #333;\n"
 "    border: 2px solid #555;\n"
 "    border-radius: 5px;\n"
@@ -2140,6 +2231,20 @@ class theme_changer:
 "border-radius:12px;\n"
 "}")
 
+
+        #Turkey edition tuşu ayarlanması
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(20)
+        self.ui.Turkey_Edition.setFont(font)
+        self.ui.Turkey_Edition.setStyleSheet("QPushButton {\n"
+"font-weight: bold;\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 217, 245), stop:1 rgb(240, 53, 218));\n"
+"border-style: solid;\n"
+"border-radius:12px;\n"
+"}")
+
         # Rose tuşunun ayarlanması
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI")
@@ -2531,6 +2636,11 @@ class theme_changer:
         font.setPointSize(9)
         self.ui.fullTime.setFont(font)
         self.ui.fullTime.setStyleSheet("")
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(9)
+        self.ui.time.setFont(font)
+        self.ui.time.setStyleSheet("")
         
 
         # Şarkı listesi'nin ayarlanması
@@ -2627,6 +2737,30 @@ class theme_changer:
         font.setPointSize(20)
         self.ui.BlackBull.setFont(font)
         self.ui.BlackBull.setStyleSheet("QPushButton {\n"
+"    color: rgb(50, 50, 50);\n"
+"    border: 2px solid #c2c2c2;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background:  #cccccc;\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background:  rgb(214, 214, 214);\n"
+"    border: 2px solid  rgb(165, 165, 165);\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: rgb(240, 240, 240);\n"
+"    }")
+
+
+        #Turkey edition tuşu ayarlanması
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(20)
+        self.ui.Turkey_Edition.setFont(font)
+        self.ui.Turkey_Edition.setStyleSheet("QPushButton {\n"
 "    color: rgb(50, 50, 50);\n"
 "    border: 2px solid #c2c2c2;\n"
 "    border-radius: 5px;\n"

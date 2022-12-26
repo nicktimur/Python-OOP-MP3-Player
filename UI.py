@@ -593,6 +593,30 @@ class Ui_Frame(object):
 "    background: rgb(15, 15, 15);\n"
 "    }")
         self.Bleeding_Rose.setObjectName("Bleeding_Rose")
+        self.Turkey_Edition = QtWidgets.QPushButton(Frame)
+        self.Turkey_Edition.setGeometry(QtCore.QRect(990, 390, 221, 41))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI")
+        font.setPointSize(20)
+        self.Turkey_Edition.setFont(font)
+        self.Turkey_Edition.setStyleSheet("QPushButton {\n"
+"    color: #c2c2c2;\n"
+"    border: 2px solid #313131;\n"
+"    border-radius: 5px;\n"
+"    border-style: outset;\n"
+"    background:  rgb(50, 50, 50);\n"
+"    }\n"
+"\n"
+"QPushButton:hover {\n"
+"    background:  rgb(30, 30, 30);\n"
+"    border: 2px solid #2a2a2a;\n"
+"    }\n"
+"\n"
+"QPushButton:pressed {\n"
+"    border-style: inset;\n"
+"    background: rgb(15, 15, 15);\n"
+"    }")
+        self.Turkey_Edition.setObjectName("Turkey_Edition")
 
         self.retranslateUi(Frame)
         QtCore.QMetaObject.connectSlotsByName(Frame)
@@ -618,6 +642,7 @@ class Ui_Frame(object):
         self.Indian_Rush.setText(_translate("Frame", "Indian Rush"))
         self.White_Chocolate.setText(_translate("Frame", "White Chocolate"))
         self.Bleeding_Rose.setText(_translate("Frame", "Bleeding Rose"))
+        self.Turkey_Edition.setText(_translate("Frame", "Turkey Edition"))
 
 
 if __name__ == "__main__":
