@@ -249,7 +249,7 @@ class Songs:
             temp = divmod(int(sec), 60)
             min = temp[0]
             sec = temp[1]
-            if theme_changer.theme == "White Chocolate":
+            if theme_changer.theme == "White Chocolate" or theme_changer.theme == "Turkey Edition" or theme_changer.theme == "Indian Rush":
                 self.ui.time.setText(QtCore.QCoreApplication.translate("Frame", "<html><head/><body><p align=\"center\"><span style=\" color:#000000;\">"+ "{:02}:{:02}".format(min, sec)  +"</span></p></p></body></html>"))
                 temp = divmod(int(remaining), 60) #Kalan sürenin hesabı
                 min = temp[0]#Kalan sürenin dakikası
