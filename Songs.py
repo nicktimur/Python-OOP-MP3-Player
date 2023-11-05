@@ -68,6 +68,7 @@ class Songs:
         new_volume = self.ui.SoundSlider.value() # 0-100 arası bir değer alıyor
         new_volume = new_volume / 100
         pygame.mixer.music.set_volume(new_volume) # 0-1 arası float değerler istiyor
+        print(new_volume)
 
     def play_clicked(self):
         if (not self.isChanged()):

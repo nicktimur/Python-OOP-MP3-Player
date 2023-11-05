@@ -32,7 +32,7 @@ class Main():
             cur.execute(cmd)
 
     def about_us(self):
-        QMessageBox.about(self.Frame, "Hakkımızda", "<html><head/><body><p align=\"center\"><span style=\" color:#c2c2c2;\"></br><br></br>Alp Doruk Şengün - 20217170015 - <a href='https://github.com/AlpoTheo'>Github</a><br></br> Timur Karakaş - 20217170062 - <a href='https://github.com/nicktimur'>Github</a></span></p></p></body></html>")
+        QMessageBox.about(self.Frame, "Hakkımızda", "<html><head/><body><p align=\"center\"><span style=\" color:#c2c2c2;\"></br><br></br> Timur Karakaş - 20217170062 - <a href='https://github.com/nicktimur'>Github</a></span></p></p></body></html>")
 
     def main(self):   
         #butonlar
