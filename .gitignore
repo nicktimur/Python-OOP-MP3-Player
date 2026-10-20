@@ -1,3 +1,6 @@
 output/
 __pycache__/
 database.db
+/.venv
+*.db
+database.db
